@@ -1,0 +1,78 @@
+BOOST QUOTE APPLICATION
+INTERNAL TERMS OF USE
+Suksun Inc.
+Effective Date: August 8, 2026
+
+By using the Boost Quote Application, an authorized employee or contractor agrees to
+use it only for legitimate Suksun Inc. business.
+
+1. PURPOSE
+The primary purpose of the application is to create accurate customer quotations for
+wireless devices, plans, promotions, protection, accessories, fees, discounts, and
+related retail transactions.
+
+2. AUTHORIZED USERS
+Only employees, contractors, managers, or other users specifically authorized by
+Suksun Inc. may use the application.
+
+3. QUOTE VERIFICATION
+A displayed quote is an estimate until the transaction is confirmed in the applicable
+authorized Boost Mobile system. Before completing a sale, staff must verify:
+- Device availability.
+- Customer and port-in eligibility.
+- Required rate plan.
+- Required prepaid service period.
+- Add-a-line, upgrade, non-port, trade-in, and other promotion conditions.
+- Taxes and applicable fees.
+- Financing eligibility and terms, when relevant.
+- Promotion dates and any store, market, or channel restrictions.
+
+4. INVENTORY DISPLAY
+"In Stock" status is a convenience feature for sales presentation. Staff must physically
+or operationally confirm inventory before promising a device to a customer.
+
+5. EOL DEVICES
+Devices designated as end-of-life (EOL) are not intended to appear in the active
+promotional catalog unless management expressly authorizes an exception.
+
+6. CUSTOMER INFORMATION
+Collect only the customer information needed for the quote or transaction. Do not use
+customer information for personal purposes. Do not share it through unauthorized apps,
+personal accounts, or unauthorized recipients.
+
+7. DEVICE SECURITY
+Staff should:
+- Use a device protected by a passcode, PIN, password, biometric lock, or equivalent.
+- Keep the operating system and browser updated.
+- Avoid using the application on public or shared devices that are not company-approved.
+- Lock the device when leaving it unattended.
+- Report lost devices or suspected unauthorized access promptly.
+
+8. LOCAL DATA
+The current static version stores certain settings, inventory selections, and quote
+information locally in the browser used by that employee. Clearing browser/site data,
+changing browsers, or replacing the device may remove locally stored information.
+
+9. NO SHARING OR COPYING
+Employees may not distribute the application file, deployment package, source code, or
+internal pricing information outside authorized Suksun Inc. personnel.
+
+10. SECURITY
+Users may not attempt to disable security protections, alter program logic for
+unauthorized purposes, install malicious code, or access data beyond their authorization.
+
+11. BUSINESS RECORDS
+Where a quote becomes part of an official transaction or customer record, staff must
+follow the company's approved record-retention and transaction procedures. The
+application's local quote history should not be treated as the sole official business
+record.
+
+12. TERMINATION OF ACCESS
+When a person's authorization ends, that person must stop using the application and
+delete company copies or data from personally controlled devices when instructed.
+
+13. CHANGES
+Suksun Inc. may update these terms, the application, pricing data, promotion data,
+inventory rules, and access requirements at any time.
+
+Copyright © 2026 Suksun Inc. All Rights Reserved.

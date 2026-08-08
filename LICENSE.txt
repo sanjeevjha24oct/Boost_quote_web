@@ -1,0 +1,84 @@
+SUKSUN INC. PROPRIETARY SOFTWARE LICENSE
+Boost Quote Application
+Version 3.4
+Effective Date: August 8, 2026
+
+Copyright © 2026 Suksun Inc. All Rights Reserved.
+
+1. OWNERSHIP
+The Boost Quote Application ("Software") is proprietary software owned and controlled by
+Suksun Inc. All title, ownership rights, and intellectual property rights in the Software,
+including its source code, user interface, calculations, configuration, documentation,
+and related materials, are reserved by Suksun Inc., except for third-party names,
+trademarks, data, or materials owned by their respective owners.
+
+2. LIMITED INTERNAL-USE LICENSE
+Suksun Inc. grants authorized employees and authorized contractors a limited,
+non-exclusive, non-transferable, revocable license to use the Software solely for
+authorized business activities of Suksun Inc. and its approved retail locations.
+
+3. PERMITTED USE
+Authorized users may:
+- Use the Software to prepare customer sales quotations.
+- Use approved device, plan, promotion, accessory, fee, discount, and inventory data.
+- Save, print, copy, or share quotations when required for legitimate business purposes.
+- Use the Software only on devices and browsers approved for company business.
+
+4. PROHIBITED USE
+Unless Suksun Inc. gives prior written permission, users may not:
+- Sell, sublicense, rent, lease, publish, redistribute, or commercially exploit the Software.
+- Give the Software or its source code to an unauthorized person or business.
+- Copy the Software for use outside Suksun Inc. business operations.
+- Remove or alter copyright, ownership, security, or confidentiality notices.
+- Circumvent access restrictions or security controls.
+- Reverse engineer, decompile, disassemble, scrape, or attempt to extract confidential
+  business logic except where applicable law expressly prohibits such a restriction.
+- Use the Software to falsify pricing, discounts, promotions, customer information,
+  inventory, or transaction records.
+- Introduce malicious code, unauthorized scripts, automation, or security-testing tools
+  against the Software without written authorization.
+
+5. CONFIDENTIAL INFORMATION
+Internal pricing, promotion rules, store inventory information, customer information,
+employee information, operational procedures, and non-public configuration information
+must be treated as confidential business information.
+
+6. CUSTOMER DATA
+Users must access and use customer information only when necessary for legitimate
+business purposes. Customer information must not be copied, exported, photographed,
+shared, retained, or used for personal purposes except as authorized by company policy
+and applicable law.
+
+7. ACCURACY OF QUOTES
+The Software is a quotation tool. Device availability, promotions, eligibility, taxes,
+fees, financing, trade-in value, activation requirements, and carrier terms may change.
+Employees remain responsible for confirming applicable offers and eligibility in the
+authorized Boost Mobile systems before completing a transaction.
+
+8. ACCESS AND TERMINATION
+Authorization to use the Software ends immediately when employment, contracting status,
+or other authorization ends, unless Suksun Inc. expressly approves continued access.
+Suksun Inc. may suspend or revoke access at any time.
+
+9. NO WARRANTY
+The Software is provided for internal business use on an "AS IS" and "AS AVAILABLE"
+basis. To the maximum extent permitted by law, Suksun Inc. disclaims warranties not
+expressly provided in writing. Users must report suspected calculation, pricing,
+security, or data errors promptly.
+
+10. LIMITATION
+The Software does not replace Boost Mobile's official point-of-sale, eligibility,
+pricing, financing, activation, compliance, or account-management systems. Official
+carrier requirements and approved company procedures control if there is a conflict.
+
+11. THIRD-PARTY MARKS
+Boost Mobile and other product, manufacturer, and service names may be trademarks of
+their respective owners. Use of those names in the Software is for authorized retail
+identification and quoting purposes and does not transfer ownership of those marks to
+Suksun Inc.
+
+12. GOVERNING RULES
+Use of the Software is subject to applicable law and Suksun Inc. policies. Any rights
+not expressly granted in this license are reserved.
+
+END OF LICENSE

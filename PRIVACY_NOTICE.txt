@@ -1,0 +1,70 @@
+BOOST QUOTE APPLICATION
+INTERNAL PRIVACY NOTICE
+Suksun Inc.
+Effective Date: August 8, 2026
+
+This notice describes the data handling of the current Boost Quote Application used
+internally by authorized Suksun Inc. staff.
+
+1. INFORMATION THAT MAY BE ENTERED
+Depending on how an employee uses the quote form, the application may process:
+- Customer name.
+- Customer phone number or other contact information entered by staff.
+- Device, rate plan, protection, accessory, and promotion selections.
+- Trade-in, discount, fee, tax, and quote information.
+- Sales representative information.
+- Notes entered into a quotation.
+- Local stock-selection settings.
+
+2. PURPOSE
+The information is used to prepare, review, save, print, copy, or share a customer
+quotation and to support legitimate retail sales activity.
+
+3. CURRENT STORAGE MODEL
+The current v3.4 static application is local-first. Quote history, application settings,
+and stock selections may be stored in the browser/device being used. The current
+version does not provide a centralized Suksun Inc. cloud database or automatic
+cross-device synchronization.
+
+4. PHONE-NUMBER REDACTION
+Where supported by the current application workflow, saved quote records may redact or
+limit retained phone-number information. Employees should nevertheless minimize the
+personal information entered and retained.
+
+5. SHARING
+Employees may share a quote only with the customer, authorized coworkers, or other
+authorized recipients for legitimate business purposes. Customer data must not be sent
+to personal accounts or unauthorized third parties.
+
+6. LOCAL DEVICE RISK
+Because data may reside in browser storage:
+- Anyone with unauthorized access to an unlocked device may potentially access locally
+  stored information.
+- Clearing browser data may delete saved information.
+- Browser/device backups may be governed by the device owner's platform settings.
+Authorized users must secure their devices appropriately.
+
+7. DATA MINIMIZATION
+Do not enter Social Security numbers, passwords, full payment-card numbers, banking
+credentials, government identity-document numbers, or other highly sensitive data into
+the quote application.
+
+8. RETENTION
+Keep quote information only as long as required for legitimate business purposes and
+company policy. Delete unnecessary local quote records when they are no longer needed.
+
+9. SECURITY INCIDENTS
+Suspected unauthorized access, loss of a device containing quote information, or
+suspected disclosure of customer information should be reported promptly to management.
+
+10. FUTURE HOSTED VERSION
+If Suksun Inc. later deploys centralized accounts, cloud storage, database services,
+analytics, or external integrations, this privacy notice should be updated before those
+features are put into production.
+
+11. CUSTOMER-FACING DISCLOSURES
+This internal notice is not a substitute for any privacy notice, consent, disclosure,
+or carrier requirement that applicable law, Boost Mobile, or another service provider
+requires to be given to a customer.
+
+Copyright © 2026 Suksun Inc. All Rights Reserved.
