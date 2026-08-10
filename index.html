@@ -1,0 +1,1429 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ff5a00" />
+  <meta name="description" content="Boost Quote — guided professional customer quote builder with stock-only promo display" />
+  <meta name="referrer" content="no-referrer" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), bluetooth=()" />
+<style>
+:root{--orange:#ff5a00;--orange-dark:#d94b00;--ink:#161616;--muted:#6f7175;--bg:#f5f6f8;--card:#fff;--line:#e5e7eb;--success:#0a7c42;--danger:#b42318;--shadow:0 12px 35px rgba(21,24,28,.08);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg)}button,input,select{font:inherit}.hidden{display:none!important}.login-shell{min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 20% 10%,#fff 0,#fff4ed 35%,#f4f5f7 70%)}.login-card{width:min(440px,100%);background:#fff;padding:36px;border-radius:24px;box-shadow:var(--shadow)}.brand-lockup{display:flex;align-items:center;gap:14px;margin-bottom:28px}.brand-lockup h1,.brand-lockup p{margin:0}.brand-lockup p{color:var(--muted);margin-top:4px}.brand-mark{width:50px;height:50px;border-radius:15px;background:var(--orange);color:white;display:grid;place-items:center;font-weight:900;font-size:26px;box-shadow:0 8px 20px rgba(255,90,0,.25)}.brand-lockup.compact{margin:0;padding:20px}.brand-lockup.compact .brand-mark{width:38px;height:38px;border-radius:11px;font-size:20px}.brand-lockup small{display:block;color:#aaa;margin-top:2px}.stack{display:grid;gap:16px}label{display:grid;gap:7px;font-weight:650;font-size:13px;color:#474a4f}input,select{width:100%;border:1px solid #d8dadd;border-radius:11px;padding:12px 13px;background:#fff;color:#111;outline:none;transition:.15s}input:focus,select:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,90,0,.12)}.btn{border:0;border-radius:11px;padding:11px 15px;font-weight:750;cursor:pointer;transition:.15s}.btn:hover{transform:translateY(-1px)}.btn.primary{background:var(--orange);color:#fff}.btn.primary:hover{background:var(--orange-dark)}.btn.secondary{background:#fff;border:1px solid #dfe1e5;color:#222}.btn.ghost{background:transparent;border:1px solid #3b3d42;color:inherit}.btn.danger{background:#fff0ee;color:var(--danger);border:1px solid #f3c3bd}.helper,.muted,.legal{color:var(--muted)}.helper{font-size:12px}.error-text{color:var(--danger);font-size:13px;min-height:18px}.app-shell{min-height:100vh;display:grid;grid-template-columns:230px 1fr}.sidebar{background:#171719;color:white;position:sticky;top:0;height:100vh;display:flex;flex-direction:column}.sidebar nav{display:grid;gap:6px;padding:8px 12px}.nav-btn{background:transparent;color:#c9cbd0;border:0;border-radius:10px;padding:12px 13px;text-align:left;font-weight:700;cursor:pointer}.nav-btn:hover,.nav-btn.active{background:#2b2c30;color:#fff}.sidebar-bottom{margin-top:auto;padding:16px;border-top:1px solid #303136;display:grid;gap:12px}.sidebar-bottom .btn{color:#fff}.user-role{color:#b7b9bf;font-size:12px;text-transform:uppercase;letter-spacing:.08em}.main{min-width:0}.topbar{min-height:82px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:14px 28px;position:sticky;top:0;z-index:4}.topbar h2,.topbar p{margin:0}.topbar p{font-size:12px;color:var(--muted);margin-top:3px}.top-actions{margin-left:auto}.icon-btn{display:none;border:0;background:transparent;font-size:22px}.view{display:none;padding:24px}.view.active{display:block}.quote-layout{display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:22px;align-items:start}.form-column{display:grid;gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 3px 12px rgba(25,28,32,.035)}.section-title{display:flex;gap:12px;align-items:flex-start;margin-bottom:18px}.section-title>span{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#fff1e8;color:var(--orange);font-weight:850}.section-title h3,.section-title p{margin:0}.section-title p{color:var(--muted);font-size:12px;margin-top:3px}.grid{display:grid;gap:14px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.metric-box{border:1px dashed #d8dade;border-radius:12px;padding:11px 13px;display:grid;align-content:center}.metric-box small{color:var(--muted)}.metric-box strong{font-size:18px}.metric-box span{font-size:12px;color:var(--success)}.check-label{display:flex;gap:10px;align-items:center;align-self:end;min-height:43px;border:1px solid #ddd;border-radius:11px;padding:10px 12px}.check-label input{width:auto}.accessory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.acc-card{display:flex;align-items:flex-start;gap:9px;border:1px solid #e0e2e5;padding:12px;border-radius:12px;cursor:pointer}.acc-card:has(input:checked){border-color:var(--orange);background:#fff8f4}.acc-card input{width:auto;margin-top:3px}.acc-card strong{display:block}.acc-card small{display:block;color:var(--muted);margin-top:3px}.top-gap{margin-top:15px}.summary-column{position:sticky;top:104px}.summary-card{box-shadow:var(--shadow)}.summary-head{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:14px;border-bottom:1px solid var(--line)}.summary-head small{color:var(--orange);font-weight:800}.summary-head h3{margin:3px 0 0}.status-pill{font-size:12px;background:#f0f1f3;padding:6px 9px;border-radius:999px}.summary-lines{display:grid;gap:10px;padding:16px 0;border-bottom:1px solid var(--line)}.sum-row,.total-block>div{display:flex;justify-content:space-between;gap:14px}.sum-row span:first-child{color:#555}.sum-row span:last-child{font-weight:700;text-align:right}.total-block{display:grid;gap:9px;padding:16px 0}.total-block .grand{font-size:21px;padding-top:9px;border-top:1px solid var(--line)}.total-block .grand strong{color:var(--orange)}.total-block .savings{color:var(--success);font-size:13px}.action-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.action-grid .full{grid-column:1/-1}.legal{font-size:10.5px;line-height:1.5;margin:14px 0 0}.toolbar{display:flex;gap:10px;margin-bottom:18px}.toolbar input{flex:1}.history-list{display:grid;gap:12px}.history-card{display:grid;grid-template-columns:1.2fr 1fr .8fr auto;align-items:center;gap:15px}.history-card h4,.history-card p{margin:0}.history-card p{color:var(--muted);font-size:12px;margin-top:4px}.quote-total{font-size:18px;font-weight:850}.button-row{display:flex;gap:8px;flex-wrap:wrap}.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:18px}.stat-card strong{font-size:28px;display:block;margin-top:5px}.stat-card small{color:var(--muted)}.table-wrap{overflow:auto;margin-top:14px}table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}th{color:#65676b;font-size:11px;text-transform:uppercase;letter-spacing:.04em}.admin-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:18px;margin-bottom:18px}.row-between{display:flex;justify-content:space-between;align-items:center;gap:12px}.row-between h3,.row-between p{margin:0}.tabs{display:flex;gap:8px;padding:15px 0 5px}.tab{border:1px solid #ddd;background:#fff;padding:8px 11px;border-radius:999px;cursor:pointer}.tab.active{background:#222;color:#fff;border-color:#222}.document-list{display:grid;gap:8px;margin-top:12px}.doc-item{display:flex;justify-content:space-between;gap:10px;padding:10px;background:#f7f7f8;border-radius:10px;font-size:12px}.toast{position:fixed;right:20px;bottom:20px;background:#171719;color:white;padding:11px 15px;border-radius:10px;z-index:20;opacity:0;transform:translateY(10px);pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:translateY(0)}
+@media(max-width:1050px){.quote-layout{grid-template-columns:1fr}.summary-column{position:static}.stats-grid{grid-template-columns:repeat(2,1fr)}.admin-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.app-shell{grid-template-columns:1fr}.sidebar{position:fixed;left:-250px;width:230px;z-index:10;transition:.2s}.sidebar.open{left:0}.icon-btn{display:block}.topbar{padding:12px 16px}.view{padding:14px}.grid.two,.grid.three,.accessory-grid{grid-template-columns:1fr}.history-card{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr 1fr}.row-between{align-items:flex-start;flex-direction:column}.toolbar{flex-direction:column}}
+
+/* v2.4 transaction pricing matrix */
+.device-matrix-wrap{margin-top:16px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.matrix-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 13px;background:#fafafa;border-bottom:1px solid var(--line)}
+.matrix-toolbar strong{font-size:13px}.matrix-toolbar span{font-size:11px;color:var(--muted);text-align:right}
+.device-price-matrix{width:100%;border-collapse:collapse;font-size:12px}.device-price-matrix th{background:#f7f7f8;position:sticky;top:0;z-index:1}.device-price-matrix th,.device-price-matrix td{padding:9px 10px;border-bottom:1px solid #eceef0;text-align:right;vertical-align:middle}.device-price-matrix th:first-child,.device-price-matrix td:first-child{text-align:left;min-width:190px}.device-price-matrix tr:last-child td{border-bottom:0}.device-price-matrix tr.selected-device{background:#fff8f3}.matrix-device{font-weight:750}.matrix-device small{display:block;color:var(--muted);font-weight:500;margin-top:2px}.price-cell{border:0;background:transparent;padding:6px 7px;border-radius:8px;cursor:pointer;text-align:right;min-width:72px}.price-cell:hover{background:#f2f3f5}.price-cell.promo{color:var(--success);font-weight:850;background:#eef9f3}.price-cell.active-choice{outline:2px solid var(--orange);outline-offset:1px}.price-cell small{display:block;font-size:9px;color:var(--muted);font-weight:600;margin-top:1px}.matrix-legend{padding:9px 12px;font-size:10.5px;color:var(--muted);background:#fff}.matrix-legend b{color:var(--success)}
+@media(max-width:760px){.device-matrix-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}.device-price-matrix{min-width:670px}.matrix-toolbar{align-items:flex-start;flex-direction:column}.matrix-toolbar span{text-align:left}}
+
+/* v2.5 guided quote workflow */
+.guided-strip{display:grid;gap:14px}.choice-row{display:flex;gap:8px;flex-wrap:wrap}.choice-btn{border:1px solid #dfe1e5;background:#fff;border-radius:999px;padding:10px 14px;font-weight:800;cursor:pointer}.choice-btn.active{background:var(--orange);border-color:var(--orange);color:#fff}.plan-choice-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.plan-choice{border:1px solid #dedfe2;background:#fff;border-radius:14px;padding:13px;text-align:left;cursor:pointer}.plan-choice.active{border:2px solid var(--orange);background:#fff8f4}.plan-choice strong{display:block;font-size:16px}.plan-choice b{display:block;color:var(--orange);font-size:18px;margin-top:5px}.plan-choice small{display:block;color:var(--muted);line-height:1.3;margin-top:5px}.best-offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}.offer-card{border:1px solid #dedfe2;background:#fff;border-radius:14px;padding:13px;text-align:left;cursor:pointer;position:relative}.offer-card.active{border:2px solid var(--orange);background:#fff8f4}.offer-card .badge{display:inline-block;font-size:10px;font-weight:900;background:#eaf8ef;color:#176c37;border-radius:999px;padding:4px 7px;margin-bottom:7px}.offer-card .badge.standard{background:#f1f2f4;color:#666}.offer-card strong,.offer-card small{display:block}.offer-card .offer-price{font-size:20px;color:var(--orange);font-weight:900;margin:5px 0}.offer-card small{color:var(--muted);line-height:1.3}.quote-highlight{background:linear-gradient(135deg,#fff4ec,#fff);border:1px solid #ffd5bd;border-radius:14px;padding:14px;margin:14px 0}.quote-highlight small{display:block;color:#7a4b31;font-weight:800}.quote-highlight strong{display:block;color:var(--orange);font-size:26px;margin-top:3px}.customer-benefits{display:grid;gap:6px;margin:0 0 14px;padding:0;list-style:none}.customer-benefits li{font-size:12px;color:#444}.customer-benefits li::before{content:'✓';color:var(--success);font-weight:900;margin-right:7px}.guided-caption{font-size:12px;color:var(--muted);margin:0}.details-toggle{font-size:12px;color:#555}.recommended-title{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:16px}.recommended-title strong{font-size:13px}.recommended-title span{font-size:11px;color:var(--muted)}
+@media(max-width:800px){.plan-choice-grid{grid-template-columns:repeat(2,1fr)}.best-offers{grid-template-columns:1fr}.choice-btn{flex:1 1 calc(50% - 8px)}}
+@media print{.sidebar,.topbar,.form-column,.action-grid,.legal{display:none!important}.app-shell{display:block}.view{padding:0}.quote-layout{display:block}.summary-column{position:static}.summary-card{border:0;box-shadow:none}.summary-head .status-pill{display:none}}
+
+/* v2 quote-first refinements */
+.btn.big{min-height:48px}.hero-card{display:flex;align-items:center;justify-content:space-between;gap:20px;background:linear-gradient(135deg,#fff 0%,#fff7f1 100%);border-color:#ffd9c2}.hero-card small{font-size:11px;font-weight:900;letter-spacing:.09em;color:var(--orange)}.hero-card h3{font-size:24px;margin:4px 0}.hero-card p{margin:0;color:var(--muted)}.span-two{grid-column:span 2}.quote-brand{display:flex;gap:10px;align-items:center;padding-bottom:15px;border-bottom:1px solid var(--line)}.quote-brand small{display:block;color:var(--muted);margin-top:2px;line-height:1.3}.brand-mark.mini{width:34px;height:34px;border-radius:10px;font-size:18px;box-shadow:none}.summary-head{padding-top:15px}.summary-head p{margin:4px 0 0;color:var(--muted);font-size:11px}.total-block .monthly{background:#fff6f0;border:1px solid #ffd9c2;border-radius:11px;padding:11px;color:#5a2b0d}.total-block .monthly strong{color:var(--orange)}.quote-note{padding:11px 12px;margin:0 0 14px;background:#f7f7f8;border-radius:10px;font-size:12px;line-height:1.45}.editing-badge{font-size:12px;font-weight:750;color:#7a3a0d;background:#fff1e8;border:1px solid #ffd3b8;border-radius:999px;padding:7px 10px}.summary-card{overflow:hidden}
+@media(max-width:760px){.hero-card{align-items:flex-start;flex-direction:column}.hero-card .btn{width:100%}.span-two{grid-column:auto}.summary-card{border-radius:14px}.total-block .grand{font-size:24px}.action-grid{grid-template-columns:1fr 1fr}.action-grid .primary{grid-column:1/-1}}
+
+/* v2.4 transaction pricing matrix */
+.device-matrix-wrap{margin-top:16px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.matrix-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 13px;background:#fafafa;border-bottom:1px solid var(--line)}
+.matrix-toolbar strong{font-size:13px}.matrix-toolbar span{font-size:11px;color:var(--muted);text-align:right}
+.device-price-matrix{width:100%;border-collapse:collapse;font-size:12px}.device-price-matrix th{background:#f7f7f8;position:sticky;top:0;z-index:1}.device-price-matrix th,.device-price-matrix td{padding:9px 10px;border-bottom:1px solid #eceef0;text-align:right;vertical-align:middle}.device-price-matrix th:first-child,.device-price-matrix td:first-child{text-align:left;min-width:190px}.device-price-matrix tr:last-child td{border-bottom:0}.device-price-matrix tr.selected-device{background:#fff8f3}.matrix-device{font-weight:750}.matrix-device small{display:block;color:var(--muted);font-weight:500;margin-top:2px}.price-cell{border:0;background:transparent;padding:6px 7px;border-radius:8px;cursor:pointer;text-align:right;min-width:72px}.price-cell:hover{background:#f2f3f5}.price-cell.promo{color:var(--success);font-weight:850;background:#eef9f3}.price-cell.active-choice{outline:2px solid var(--orange);outline-offset:1px}.price-cell small{display:block;font-size:9px;color:var(--muted);font-weight:600;margin-top:1px}.matrix-legend{padding:9px 12px;font-size:10.5px;color:var(--muted);background:#fff}.matrix-legend b{color:var(--success)}
+@media(max-width:760px){.device-matrix-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}.device-price-matrix{min-width:670px}.matrix-toolbar{align-items:flex-start;flex-direction:column}.matrix-toolbar span{text-align:left}}
+@media print{body{background:#fff}.sidebar,.topbar,.no-print,#toast{display:none!important}.app-shell{display:block}.main{display:block}.view{display:none!important;padding:0}.view#quoteView{display:block!important}.quote-layout{display:block}.form-column{display:none}.summary-column{position:static}.summary-card{width:100%;max-width:760px;margin:0 auto;box-shadow:none;border:0;padding:28px}.legal{margin-top:28px}.quote-brand{padding-top:0}.grand strong{font-size:28px}}
+
+  
+.brand-logo{width:58px;height:58px;object-fit:cover;border-radius:50%;background:#fff;flex:0 0 auto}
+.brand-logo-inline{display:flex;align-items:center;gap:12px}
+@media (max-width:640px){.brand-logo{width:48px;height:48px}.brand-logo-inline{gap:9px}}
+
+
+
+.brand-lockup.compact 
+
+
+
+.deploy-version-badge{
+ position:fixed;right:10px;bottom:10px;z-index:99999;
+ background:#111827;color:#fff;border-radius:999px;padding:7px 11px;
+ font:700 12px/1.2 Arial,sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.2)
+}
+
+
+.pricing-update-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:18px}
+.update-lock{max-width:520px;margin:30px auto}
+.pin-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.update-banner{padding:12px 14px;border-radius:12px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:12px;line-height:1.5;margin-bottom:16px}
+.doc-status{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:800;background:#eef2f7;color:#475569}
+.doc-status.active{background:#ecfdf5;color:#047857}
+.pricing-doc-card{border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:9px;background:#fff}
+.pricing-doc-card h4,.pricing-doc-card p{margin:0}
+.pricing-doc-card p{font-size:12px;color:var(--muted)}
+.pricing-doc-list{display:grid;gap:10px;margin-top:12px}
+.file-name{font-size:12px;font-weight:750;word-break:break-word}
+.mini-note{font-size:11px;color:var(--muted);line-height:1.45}
+@media(max-width:900px){.pricing-update-grid{grid-template-columns:1fr}.pin-row{grid-template-columns:1fr}}
+
+
+.brand-lockup.logo-only,.brand-logo-inline.logo-only,.quote-brand.logo-only{justify-content:flex-start}
+.brand-lockup:has(.brand-mark):not(:has(h1)):not(:has(strong)){margin-bottom:20px}
+.brand-lockup.compact{justify-content:flex-start}
+.brand-logo-inline .brand-mark{width:50px;height:50px;border-radius:15px;font-size:26px}
+.quote-brand{padding-bottom:12px}
+
+
+.stock-control-panel{display:grid;gap:8px}
+.stock-device-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+.stock-device-card{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff;display:grid;gap:8px}
+.stock-device-card.in-stock{border-color:#86efac;background:#f0fdf4}
+.stock-device-card .stock-device-name{font-weight:800}
+.stock-device-card .stock-device-meta{font-size:11px;color:var(--muted)}
+.stock-device-card .btn{width:100%;padding:9px 10px}
+.stock-count{font-size:12px;font-weight:850;color:#166534}
+@media(max-width:720px){.stock-device-grid{grid-template-columns:1fr}.stock-control-panel .toolbar{display:grid;grid-template-columns:1fr 1fr}.stock-control-panel .toolbar input{grid-column:1/-1}}
+
+</style>
+  <title>Boost Quote</title>
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='18' fill='%23ff5a00'/><text x='32' y='41' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-size='34' font-weight='900' fill='white'>B</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='18' fill='%23ff5a00'/><text x='32' y='41' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-size='34' font-weight='900' fill='white'>B</text></svg>">
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+</head>
+<body>
+  <noscript><div style="padding:16px;font-family:Arial">JavaScript is required to use Boost Quote.</div></noscript>
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <section id="loginView" class="login-shell hidden">
+    <div class="login-card">
+      <div class="brand-lockup logo-only"><div class="brand-mark">B</div></div>
+      <form id="loginForm" class="stack">
+        <label>Username<input id="loginUsername" autocomplete="username" required /></label>
+        <label>Password<input id="loginPassword" type="password" autocomplete="current-password" required /></label>
+        <button class="btn primary big" type="submit">Start quoting</button>
+        <p class="helper">Demo: advocate / 1234 · manager / 2468 · admin / 9999</p>
+        <p id="loginError" class="error-text"></p>
+      </form>
+    </div>
+  </section>
+
+  <div id="appView" class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-lockup compact logo-only"><div class="brand-mark">B</div></div>
+      <nav>
+        <button data-view="quote" class="nav-btn active">＋ Create Quote</button>
+        <button data-view="history" class="nav-btn">Quote History</button>
+        <button data-view="updates" class="nav-btn">Pricing Updates</button>
+        <button data-view="reports" class="nav-btn manager-only">Quote Reports</button>
+        <button data-view="admin" class="nav-btn admin-only">Admin & Pricing</button>
+      </nav>
+      <div class="sidebar-bottom"><div id="userBadge"></div><button id="logoutBtn" class="btn ghost">Sign out</button></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar"><div class="brand-logo-inline logo-only"><div class="brand-mark">B</div></div>
+        <button id="menuBtn" class="icon-btn" aria-label="Menu">☰</button>
+        <div><h2 id="pageTitle">Create Quote</h2><p id="storeLine"></p></div>
+        <div class="top-actions"><span id="editingBadge" class="editing-badge hidden"></span><button id="installBtn" class="btn secondary hidden">Install App</button></div>
+      </header>
+
+      <section id="quoteView" class="view active">
+        <div class="quote-layout">
+          <div class="form-column">
+            <article class="card hero-card no-print">
+              <div><small>BOOST MOBILE SALES QUOTE</small><h3>Build the customer’s offer</h3><p>Select the sale, device, service and add-ons. The quote updates instantly.</p></div>
+              <button id="quickResetBtn" class="btn secondary">New blank quote</button>
+            </article>
+
+            <article class="card no-print guided-strip">
+              <div class="section-title"><span>⚡</span><div><h3>Quick Quote</h3><p>Start with the sale type and plan. Best matching phone offers appear automatically.</p></div></div>
+              <div>
+                <p class="guided-caption">1. What is the customer doing?</p>
+                <div id="transactionChoices" class="choice-row top-gap"></div>
+              </div>
+              <div>
+                <p class="guided-caption">2. Choose the plan</p>
+                <div id="planChoices" class="plan-choice-grid top-gap"></div>
+              </div>
+              <div>
+                <div class="recommended-title"><strong>3. In-stock promo phones</strong><span>Only phones marked In Stock · ranked by transaction, plan and months</span></div>
+                <div id="bestDeviceOffers" class="best-offers"></div>
+                <details class="top-gap">
+                  <summary class="details-toggle"><strong>Manage Promo Stock</strong> · choose which phones are physically in stock</summary>
+                  <p class="guided-caption top-gap">Use this list to control store inventory. It always shows all active non-EOL phones. Phones marked In Stock appear in Promo Display, Device Price Comparison, and Device & Pricing → Devices.</p>
+                  <div class="stock-control-panel top-gap">
+                    <div class="toolbar">
+                      <input id="stockSearch" placeholder="Search all active phones" />
+                      <button id="addVisibleStock" type="button" class="btn secondary">Add All Visible</button>
+                      <button id="removeVisibleStock" type="button" class="btn secondary">Remove All Visible</button>
+                    </div>
+                    <div class="row-between">
+                      <span id="stockCount" class="stock-count">0 phones in stock</span>
+                      <span class="muted" style="font-size:11px">This list always shows the full active non-EOL catalog.</span>
+                    </div>
+                  </div>
+                  <div id="promoStockManager" class="stock-device-grid"></div>
+                </details>
+              </div>
+            </article>
+
+            <article class="card no-print">
+              <div class="section-title"><span>1</span><div><h3>Sale & customer</h3><p>Only the information needed to identify the quote.</p></div></div>
+              <div class="grid three">
+                <label>Transaction type<select id="transactionType"><option>New Line</option><option>Port-In</option><option>Upgrade</option><option>Add-a-Line</option><option>BYOD</option><option>General Quote</option></select></label>
+                <label>Customer name<input id="customerName" placeholder="Optional" /></label>
+                <label>Customer phone<input id="customerPhone" inputmode="tel" placeholder="Optional" /></label>
+                <label>Sales representative<input id="salesRep" /></label>
+                <label class="span-two">Quote note<input id="quoteNote" placeholder="Optional eligibility, promo or customer note" /></label>
+              </div>
+            </article>
+
+            <article class="card no-print">
+              <div class="section-title"><span>2</span><div><h3>Device & transaction pricing</h3><p>Choose a device type, then a phone; or tap a price in the matrix. Active devices come from the 8/4/2026 hotsheet and EOL devices are excluded.</p></div></div>
+              <div class="grid three">
+                <label>Device type<select id="deviceType"><option value="all">All phones</option><option value="New">New</option><option value="Certified Pre-Owned">Certified Pre-Owned</option><option value="Renewed">Renewed</option></select></label>
+                <label>Device<select id="deviceId"></select></label>
+                <label>Number of lines<select id="lineQty"><option value="1">1 line</option><option value="2">2 lines</option><option value="3">3 lines</option><option value="4">4 lines</option><option value="5">5 lines</option></select></label>
+                <div class="metric-box"><small>Retail → quote price</small><strong id="devicePricePreview">—</strong><span id="deviceSavingsPreview"></span></div>
+              </div>
+              
+            </article>
+
+            <article class="card no-print">
+              <div class="section-title"><span>3</span><div><h3>Service & protection</h3><p>Choose the plan and how many months the customer is paying today.</p></div></div>
+              <div class="grid three">
+                <label>Plan<select id="planId"></select></label>
+                <label>Service paid today<select id="months"></select></label>
+                <label class="check-label"><input id="protect" type="checkbox" /> Add Boost Protect</label>
+              </div>
+              <div id="promoMatch" class="metric-box top-gap"><small>PROMOTION CHECK</small><strong>Select a device and plan</strong><span>Eligible promotions will appear automatically.</span></div>
+            </article>
+
+            <article class="card no-print">
+              <div class="section-title"><span>4</span><div><h3>Accessories</h3><p>Add what the customer is purchasing today.</p></div></div>
+              <div id="accessoriesList" class="accessory-grid"></div>
+              <div class="grid two top-gap">
+                <label>Accessory / bundle discount<input id="accessoryDiscount" type="number" min="0" step="0.01" value="0" /></label>
+                <div class="metric-box"><small>Accessories</small><strong id="accessorySubtotalPreview">$0.00</strong><span id="accessoryNetPreview"></span></div>
+              </div>
+            </article>
+
+            <article class="card no-print">
+              <div class="section-title"><span>5</span><div><h3>Fees, trade-in & discount</h3><p>Finalize the amount the customer will pay.</p></div></div>
+              <div class="grid three">
+                <label>Activation fee / line<input id="activationFee" type="number" min="0" step="0.01" /></label>
+                <label>Additional fees<input id="additionalFees" type="number" min="0" step="0.01" value="0" /></label>
+                <label>Trade-in credit<input id="tradeIn" type="number" min="0" step="0.01" value="0" /></label>
+                <label>Manual discount<input id="manualDiscount" type="number" min="0" step="0.01" value="0" /></label>
+                <label class="check-label"><input id="waiveActivation" type="checkbox" /> Waive activation</label>
+              </div>
+            </article>
+
+            <article class="card no-print">
+              <div class="section-title"><span>6</span><div><h3>Device price comparison</h3><p>In-stock devices only. Use this section when you need to compare transaction pricing.</p></div></div>
+              <div class="device-matrix-wrap">
+                <div class="matrix-toolbar"><strong>Device price comparison · In Stock Only</strong><span id="matrixContext">Only phones marked In Stock are displayed here.</span></div>
+                <div class="device-matrix-scroll"><div id="devicePriceMatrix"></div></div>
+                <div class="matrix-legend"><b>Green</b> = an offer in the loaded approved/public catalog matches the selected plan and prepaid months. “Standard” = no matching transaction promotion is loaded; verify Boost POS before finalizing.</div>
+              </div>
+            </article>
+
+          </div>
+
+          <aside class="summary-column">
+            <article id="quotePaper" class="card summary-card">
+              <div class="quote-brand logo-only"><div class="brand-mark mini">B</div></div>
+              <div class="summary-head"><div><small>CUSTOMER QUOTE</small><h3 id="summaryCustomer">New customer</h3><p id="summaryMeta"></p></div><div id="quoteStatus" class="status-pill">Draft</div></div>
+              <div id="summaryLines" class="summary-lines"></div>
+              <div class="quote-highlight"><small>YOUR ESTIMATED TOTAL TODAY</small><strong id="heroTotalOut">$0.00</strong><span id="heroMonthlyOut" class="muted">Estimated monthly: $0.00/mo</span></div>
+              <ul id="customerBenefits" class="customer-benefits"></ul>
+              <div class="total-block">
+                <div><span>Subtotal</span><strong id="subtotalOut">$0.00</strong></div>
+                <div><span>Estimated tax</span><strong id="taxOut">$0.00</strong></div>
+                <div class="grand"><span>PAY TODAY</span><strong id="totalOut">$0.00</strong></div>
+                <div class="monthly"><span>Estimated monthly after prepaid period</span><strong id="monthlyOut">$0.00/mo</strong></div>
+                <div class="savings"><span>Estimated savings</span><strong id="savingsOut">$0.00</strong></div>
+              </div>
+              <div id="quoteNoteOut" class="quote-note hidden"></div>
+              <div class="action-grid no-print"><button id="saveQuoteBtn" class="btn primary big">Save Quote</button><button id="copyQuoteBtn" class="btn secondary">Copy</button><button id="shareQuoteBtn" class="btn secondary">Share</button><button id="printQuoteBtn" class="btn secondary">Print / PDF</button><button id="newQuoteBtn" class="btn ghost full">Start New Quote</button></div>
+              <p class="legal"><strong>Catalog source: Boost Device Hotsheet effective Aug. 4, 2026:</strong> 36 devices from Boost Mobile's live public handset catalog. Public “From” prices can be online or eligibility-specific and do not automatically become the in-store quote price.</p>
+              <p class="legal">This is an estimate, not a receipt or contract. Device pricing, promotions and eligibility must be verified in the approved Boost sales system. Taxes and fees may vary. Monthly amount is an estimate based on selected plan/protection and excludes future taxes, fees, changes or promotions.</p>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section id="historyView" class="view">
+        <div class="toolbar card"><input id="historySearch" placeholder="Search quote number, customer, phone or rep…" /><button id="exportQuotesBtn" class="btn secondary manager-only">Export Quotes</button></div>
+        <div id="historyList" class="history-list"></div>
+      </section>
+
+
+      <section id="updatesView" class="view">
+        <div id="pricingUpdateLocked" class="card update-lock">
+          <div class="section-title">
+            <span>🔒</span>
+            <div><h3>Manager Pricing & Promotion Updates</h3><p>Protected local management area.</p></div>
+          </div>
+          <div id="pricingPinSetup" class="hidden">
+            <div class="update-banner"><strong>First-time setup:</strong> create a 4–12 digit Manager PIN for this browser/device. This static GitHub version stores only a one-way PIN hash locally. Clearing browser/site data will remove the PIN and locally stored PDFs.</div>
+            <div class="pin-row">
+              <label>New Manager PIN<input id="newManagerPin" type="password" inputmode="numeric" maxlength="12" autocomplete="new-password" placeholder="4–12 digits"></label>
+              <label>Confirm PIN<input id="confirmManagerPin" type="password" inputmode="numeric" maxlength="12" autocomplete="new-password" placeholder="Repeat PIN"></label>
+            </div>
+            <button id="setManagerPinBtn" class="btn primary top-gap">Set Manager PIN</button>
+            <p class="mini-note">4-digit PINs are allowed. Example: 9999. Use normal Safari/Chrome mode, not Private Browsing.</p>
+          </div>
+          <div id="pricingPinLogin" class="hidden">
+            <label>Manager PIN<input id="managerPin" type="password" inputmode="numeric" maxlength="12" autocomplete="off" placeholder="Enter Manager PIN"></label>
+            <div class="button-row top-gap">
+              <button id="unlockPricingBtn" class="btn primary">Unlock Updates</button>
+            </div>
+          </div>
+          <p id="pricingPinMessage" class="error-text"></p>
+        </div>
+
+        <div id="pricingUpdatePanel" class="hidden">
+          <div class="row-between" style="margin-bottom:16px">
+            <div><h2 style="margin:0">Pricing & Promotion Updates</h2><p class="muted" style="margin:4px 0 0">Upload approved PDFs, keep version history, and apply reviewed pricing data.</p></div>
+            <div class="button-row"><button id="changeManagerPinBtn" class="btn secondary">Change PIN</button><button id="lockPricingBtn" class="btn secondary">Lock</button></div>
+          </div>
+
+          <div class="update-banner"><strong>Important:</strong> uploaded PDFs are stored for reference on this browser/device. This static GitHub build does not automatically rewrite device prices from arbitrary PDFs. To change the quote catalog, use <strong>Apply Pricing JSON</strong> after the pricing data has been reviewed. Existing In-Stock selections are preserved during a JSON pricing update.</div>
+
+          <div class="pricing-update-grid">
+            <article class="card">
+              <div class="section-title"><span>1</span><div><h3>Upload approved PDF</h3><p>Device hotsheet or promotion document.</p></div></div>
+              <div class="grid two">
+                <label>Document type
+                  <select id="pricingDocType">
+                    <option value="hotsheet">Device Hotsheet</option>
+                    <option value="promotion">Promotion PDF</option>
+                  </select>
+                </label>
+                <label>Effective date<input id="pricingEffectiveDate" type="date"></label>
+                <label>Version / label<input id="pricingVersionLabel" maxlength="80" placeholder="Example: 8/10/2026 Hotsheet"></label>
+                <label>PDF file<input id="pricingPdfFile" type="file" accept="application/pdf,.pdf"></label>
+              </div>
+              <label class="top-gap">Manager notes<input id="pricingDocNotes" maxlength="240" placeholder="Optional notes about this update"></label>
+              <button id="savePricingPdfBtn" class="btn primary top-gap">Upload PDF</button>
+              <p class="mini-note">PDF validation checks file type, PDF signature, and a 15 MB maximum size.</p>
+            </article>
+
+            <article class="card">
+              <div class="section-title"><span>2</span><div><h3>Apply reviewed pricing data</h3><p>Actual quote prices are changed only from a reviewed JSON update.</p></div></div>
+              <label>Pricing update JSON<input id="pricingJsonFile" type="file" accept="application/json,.json"></label>
+              <button id="applyPricingJsonBtn" class="btn primary top-gap">Review & Apply JSON</button>
+              <p class="mini-note">The importer requires Devices, Plans, Accessories and Settings. Device In-Stock flags are preserved by matching device ID, SKU, or model. EOL devices flagged in the JSON are excluded from the active catalog.</p>
+              <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+              <strong>Current catalog</strong>
+              <p id="pricingCatalogStatus" class="muted"></p>
+            </article>
+          </div>
+
+          <article class="card top-gap">
+            <div class="row-between"><div><h3>Pricing document history</h3><p class="muted">Mark the currently approved hotsheet/promotion as Active.</p></div><button id="refreshPricingDocsBtn" class="btn secondary">Refresh</button></div>
+            <div id="pricingDocHistory" class="pricing-doc-list"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="reportsView" class="view manager-only"><div class="stats-grid" id="statsGrid"></div><article class="card"><h3>Quote activity by representative</h3><div id="repReport" class="table-wrap"></div></article></section>
+
+      <section id="adminView" class="view admin-only">
+        <div class="admin-grid">
+          <article class="card"><h3>Store & quote settings</h3><p class="muted">These values feed directly into new customer quotes.</p><div id="settingsEditor" class="grid two"></div><button id="saveSettingsBtn" class="btn primary top-gap">Save Settings</button></article>
+          <article class="card"><h3>Pricing documents</h3><p class="muted">Attach approved pricing PDFs for store reference. Files remain in this browser.</p><input id="pdfUpload" type="file" accept="application/pdf" multiple /><div id="pdfList" class="document-list"></div></article>
+        </div>
+        <article class="card"><div class="row-between"><div><h3>Quote catalog</h3><p class="muted">Control the products and prices available to reps.</p></div><div class="button-row"><button id="importCatalogBtn" class="btn secondary">Import JSON</button><button id="exportCatalogBtn" class="btn secondary">Export Backup</button><button id="resetCatalogBtn" class="btn danger">Reset Current Data</button></div></div><input id="catalogFile" class="hidden" type="file" accept="application/json" /><div id="catalogTabs" class="tabs"></div><div id="catalogEditor" class="table-wrap"></div></article>
+      </section>
+    </main>
+  </div>
+  <script>
+const APP_VERSION = '4.6.0-stock-manager-fixed';
+
+const DEFAULT_DATA = {
+  catalogVersion: '2026-08-04-boost-hotsheet-v4.1-no-eol',
+  users: [],
+  devices: [{"id":"hs-001","brand":"Apple","model":"Certified Pre-owned iPhone 13 128GB","sku":"HS-001","retail":294.99,"promo":294.99,"publicFrom":294.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"Certified Pre-Owned","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":294.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"unlimited-25","transactionTypes":["Add-a-Line"],"minMonths":1,"price":294.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"unlimited-25","transactionTypes":["Port-In"],"minMonths":1,"price":294.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"unlimited-25","transactionTypes":["New Line"],"minMonths":1,"price":294.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-002","brand":"Apple","model":"Certified Pre-owned iPhone 14 128GB","sku":"HS-002","retail":344.99,"promo":344.99,"publicFrom":344.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"Certified Pre-Owned","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":344.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"unlimited-25","transactionTypes":["Add-a-Line"],"minMonths":1,"price":344.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"unlimited-25","transactionTypes":["Port-In"],"minMonths":1,"price":344.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"unlimited-25","transactionTypes":["New Line"],"minMonths":1,"price":344.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-003","brand":"Apple","model":"Certified Pre-owned iPhone 14 Pro Max","sku":"HS-003","retail":484.99,"promo":484.99,"publicFrom":484.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"Certified Pre-Owned","active":true,"boostProtect":15,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":484.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"unlimited-25","transactionTypes":["Add-a-Line"],"minMonths":1,"price":484.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"unlimited-25","transactionTypes":["Port-In"],"minMonths":1,"price":484.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"unlimited-25","transactionTypes":["New Line"],"minMonths":1,"price":484.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-004","brand":"Apple","model":"Certified Pre-owned iPhone 15 128GB","sku":"HS-004","retail":444.99,"promo":444.99,"publicFrom":444.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"Certified Pre-Owned","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":444.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"unlimited-25","transactionTypes":["Add-a-Line"],"minMonths":1,"price":444.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"unlimited-25","transactionTypes":["Port-In"],"minMonths":1,"price":444.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"unlimited-25","transactionTypes":["New Line"],"minMonths":1,"price":444.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-005","brand":"Apple","model":"iPhone 15 128GB","sku":"HS-005","retail":629.99,"promo":629.99,"publicFrom":399.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":399.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":399.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":399.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":399.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-006","brand":"Apple","model":"iPhone 15 Pro 256GB","sku":"HS-006","retail":1099.99,"promo":1099.99,"publicFrom":619.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":15,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":719.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":719.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":619.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":719.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-007","brand":"Apple","model":"iPhone 16 128GB","sku":"HS-007","retail":729.99,"promo":729.99,"publicFrom":499.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":499.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":499.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":499.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":499.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-008","brand":"Apple","model":"iPhone 16 Pro 128GB","sku":"HS-008","retail":999.99,"promo":999.99,"publicFrom":799.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":799.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":799.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":799.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":799.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-009","brand":"Apple","model":"iPhone 16 Plus 128GB","sku":"HS-009","retail":829.99,"promo":829.99,"publicFrom":629.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":629.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":629.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":629.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":629.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-010","brand":"Apple","model":"iPhone 16 Pro Max 256GB","sku":"HS-010","retail":1199.99,"promo":1199.99,"publicFrom":999.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":15,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":999.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":999.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":999.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":999.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-011","brand":"Apple","model":"iPhone 16e 128GB","sku":"HS-011","retail":599.99,"promo":599.99,"publicFrom":49.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":149.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":2,"price":149.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":2,"price":49.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":2,"price":149.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-012","brand":"Apple","model":"iPhone 17e 256GB","sku":"HS-012","retail":599.99,"promo":599.99,"publicFrom":149.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":249.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":2,"price":249.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":2,"price":149.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":2,"price":249.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-013","brand":"Apple","model":"iPhone 17e 512GB","sku":"HS-013","retail":799.99,"promo":799.99,"publicFrom":599.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":599.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":599.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":599.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":599.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-014","brand":"Apple","model":"iPhone 17 256GB","sku":"HS-014","retail":829.99,"promo":829.99,"publicFrom":599.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":599.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":599.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":599.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":599.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-015","brand":"Apple","model":"iPhone Air 256GB","sku":"HS-015","retail":999.99,"promo":999.99,"publicFrom":799.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":799.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":799.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":799.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":799.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-016","brand":"Apple","model":"iPhone 17 Pro 256GB","sku":"HS-016","retail":1099.99,"promo":1099.99,"publicFrom":899.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":15,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":899.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":899.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":899.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":899.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-017","brand":"Apple","model":"iPhone 17 Pro 512GB","sku":"HS-017","retail":1299.99,"promo":1299.99,"publicFrom":1099.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":15,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":1099.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":1099.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":1099.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":1099.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-018","brand":"Apple","model":"iPhone 17 Pro Max 256GB","sku":"HS-018","retail":1199.99,"promo":1199.99,"publicFrom":999.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":15,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":999.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":999.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":999.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":999.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-019","brand":"Apple","model":"iPhone 17 Pro Max 512GB","sku":"HS-019","retail":1399.99,"promo":1399.99,"publicFrom":1199.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":15,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":1199.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":1199.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":1199.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":1199.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-020","brand":"Google","model":"Google Pixel 10a","sku":"HS-020","retail":499.99,"promo":499.99,"publicFrom":49.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":8,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":2,"price":99.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":2,"price":149.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":2,"price":49.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":2,"price":149.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-021","brand":"Google","model":"Google Pixel 10","sku":"HS-021","retail":799.99,"promo":799.99,"publicFrom":299.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":1,"price":299.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":399.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":299.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":399.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-022","brand":"Google","model":"Google Pixel 10 Pro","sku":"HS-022","retail":999.99,"promo":999.99,"publicFrom":449.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":1,"price":449.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":549.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":449.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":549.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-023","brand":"Google","model":"Google Pixel 10 Pro Fold","sku":"HS-023","retail":1799.99,"promo":1799.99,"publicFrom":1799.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":18,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":1,"price":1799.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":1799.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":1799.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":1799.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-024","brand":"Samsung","model":"Samsung A15 5G 64GB","sku":"HS-024","retail":169.99,"promo":169.99,"publicFrom":34.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":8,"offers":[{"planId":"plus-50","transactionTypes":["Upgrade"],"minMonths":1,"price":44.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":44.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":34.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":44.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-025","brand":"Samsung","model":"Samsung A16","sku":"HS-025","retail":169.99,"promo":169.99,"publicFrom":0,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":8,"offers":[{"planId":"plus-50","transactionTypes":["Upgrade"],"minMonths":1,"price":4.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":0,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":0,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":0,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-026","brand":"Samsung","model":"Samsung A17","sku":"HS-026","retail":199.99,"promo":199.99,"publicFrom":0,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":8,"offers":[{"planId":"plus-50","transactionTypes":["Upgrade"],"minMonths":1,"price":69.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":69.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":0,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":69.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-027","brand":"Samsung","model":"Samsung A27","sku":"HS-027","retail":349.99,"promo":349.99,"publicFrom":0,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":8,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":2,"price":99.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":2,"price":99.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":2,"price":0,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":2,"price":99.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-028","brand":"Samsung","model":"Samsung Galaxy S25 FE","sku":"HS-028","retail":649.99,"promo":649.99,"publicFrom":199.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":1,"price":199.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":299.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":199.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":299.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-029","brand":"Samsung","model":"Samsung Galaxy S26 256GB","sku":"HS-029","retail":899.99,"promo":899.99,"publicFrom":399.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":1,"price":399.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":499.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":399.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":499.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-030","brand":"Samsung","model":"Samsung Galaxy S26 Ultra 256GB","sku":"HS-030","retail":1299.99,"promo":1299.99,"publicFrom":699.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":15,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":1,"price":699.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":799.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":699.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":799.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-031","brand":"Samsung","model":"Samsung Galaxy Z Flip7 FE 128GB","sku":"HS-031","retail":899.99,"promo":899.99,"publicFrom":499.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":1,"price":499.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":499.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":499.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":499.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-032","brand":"Samsung","model":"Samsung Galaxy Z Flip7 FE 256GB","sku":"HS-032","retail":959.99,"promo":959.99,"publicFrom":559.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":1,"price":559.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":559.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":559.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":559.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-033","brand":"Motorola","model":"moto G 2025","sku":"HS-033","retail":159.99,"promo":159.99,"publicFrom":0,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":8,"offers":[{"planId":"plus-50","transactionTypes":["Upgrade"],"minMonths":1,"price":24.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":24.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":0,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":24.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-034","brand":"Motorola","model":"moto G Stylus 2025","sku":"HS-034","retail":299.99,"promo":299.99,"publicFrom":0,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":8,"offers":[{"planId":"plus-50","transactionTypes":["Upgrade"],"minMonths":1,"price":24.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":0,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":4.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":24.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-035","brand":"Motorola","model":"moto G 2026","sku":"HS-035","retail":199.99,"promo":199.99,"publicFrom":4.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":8,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":1,"price":14.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":14.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":4.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":14.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-036","brand":"Motorola","model":"moto G Play 2026","sku":"HS-036","retail":249.99,"promo":249.99,"publicFrom":0,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":8,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":1,"price":9.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":14.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":0,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":14.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-037","brand":"Motorola","model":"moto RAZR 2025","sku":"HS-037","retail":599.99,"promo":599.99,"publicFrom":199.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":1,"price":199.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":199.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":199.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":199.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-038","brand":"Boost","model":"Celero 3 5G 2024","sku":"HS-038","retail":159.99,"promo":159.99,"publicFrom":0,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":8,"offers":[{"planId":"plus-50","transactionTypes":["Upgrade"],"minMonths":1,"price":24.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":24.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":0,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":24.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-039","brand":"Boost","model":"Celero 5G SC","sku":"HS-039","retail":109.99,"promo":109.99,"publicFrom":0,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":8,"offers":[{"planId":"plus-50","transactionTypes":["Upgrade"],"minMonths":1,"price":19.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":19.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":0,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":19.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-040","brand":"Boost","model":"Celero 3 5G+ 2024","sku":"HS-040","retail":239.99,"promo":239.99,"publicFrom":49.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":8,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":1,"price":99.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":99.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":49.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":99.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-041","brand":"Boost","model":"Summit Flip","sku":"HS-041","retail":59.99,"promo":59.99,"publicFrom":29.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":8,"offers":[{"planId":"plus-50","transactionTypes":["Upgrade"],"minMonths":1,"price":29.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":29.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":29.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":29.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-042","brand":"TCL","model":"TCL Classic","sku":"HS-042","retail":69.99,"promo":69.99,"publicFrom":39.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":8,"offers":[{"planId":"plus-50","transactionTypes":["Upgrade"],"minMonths":1,"price":39.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":39.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":39.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":39.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-043","brand":"TCL","model":"TCL 50XL","sku":"HS-043","retail":149.99,"promo":149.99,"publicFrom":0.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"New","active":true,"boostProtect":8,"offers":[{"planId":"plus-50","transactionTypes":["Upgrade"],"minMonths":1,"price":149.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":0.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":0.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":0.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-044","brand":"Samsung","model":"Renewed Samsung A15 128 GB","sku":"HS-044","retail":99.99,"promo":99.99,"publicFrom":0,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"Renewed","active":true,"boostProtect":8,"offers":[{"planId":"plus-50","transactionTypes":["Upgrade"],"minMonths":1,"price":99.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":0,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":0,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":0,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-045","brand":"Samsung","model":"Renewed Samsung A15 64 GB","sku":"HS-045","retail":95,"promo":95,"publicFrom":0,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"Renewed","active":true,"boostProtect":8,"offers":[{"planId":"plus-50","transactionTypes":["Upgrade"],"minMonths":1,"price":95,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":0,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":0,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":0,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-046","brand":"Samsung","model":"Renewed Samsung A16","sku":"HS-046","retail":104,"promo":104,"publicFrom":0.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"Renewed","active":true,"boostProtect":8,"offers":[{"planId":"plus-50","transactionTypes":["Upgrade"],"minMonths":1,"price":104,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":4.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":0.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":4.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-047","brand":"Samsung","model":"Renewed Samsung A25","sku":"HS-047","retail":104,"promo":104,"publicFrom":24.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"Renewed","active":true,"boostProtect":8,"offers":[{"planId":"plus-50","transactionTypes":["Upgrade"],"minMonths":1,"price":104,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":69.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":24.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":69.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-048","brand":"Samsung","model":"Renewed Samsung A36","sku":"HS-048","retail":161,"promo":161,"publicFrom":161,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"Renewed","active":true,"boostProtect":8,"offers":[{"planId":"plus-50","transactionTypes":["Upgrade"],"minMonths":1,"price":161,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":161,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":161,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":161,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-049","brand":"Motorola","model":"Renewed Moto G Play","sku":"HS-049","retail":59.99,"promo":59.99,"publicFrom":0,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"Renewed","active":true,"boostProtect":8,"offers":[{"planId":"plus-50","transactionTypes":["Upgrade"],"minMonths":1,"price":59.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":0,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":0,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":0,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-050","brand":"Motorola","model":"Renewed Moto G '25","sku":"HS-050","retail":123,"promo":123,"publicFrom":0.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"Renewed","active":true,"boostProtect":8,"offers":[{"planId":"plus-50","transactionTypes":["Upgrade"],"minMonths":1,"price":123,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":2.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":0.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":2.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-051","brand":"Boost","model":"Renewed Celero 3+ 5G","sku":"HS-051","retail":111,"promo":111,"publicFrom":0.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"Renewed","active":true,"boostProtect":8,"offers":[{"planId":"plus-50","transactionTypes":["Upgrade"],"minMonths":1,"price":111,"title":"Upgrade \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":19.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":0.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":19.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-052","brand":"Apple","model":"Renewed iPhone SE (3rd gen)","sku":"HS-052","retail":199.99,"promo":199.99,"publicFrom":199.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"Renewed","active":true,"boostProtect":8,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":199.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Add-a-Line"],"minMonths":1,"price":199.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["Port-In"],"minMonths":1,"price":199.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"plus-50","transactionTypes":["New Line"],"minMonths":1,"price":199.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-053","brand":"Apple","model":"Renewed iPhone 16 Plus","sku":"HS-053","retail":579.99,"promo":579.99,"publicFrom":319.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"Renewed","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":579.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":399.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":319.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":399.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-054","brand":"Apple","model":"Renewed iPhone 16e","sku":"HS-054","retail":309.99,"promo":309.99,"publicFrom":199.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"Renewed","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":309.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":309.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":199.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":249.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-055","brand":"Apple","model":"Renewed iPhone 13","sku":"HS-055","retail":279.99,"promo":279.99,"publicFrom":19.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"Renewed","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":279.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":89.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":19.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":89.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]},{"id":"hs-056","brand":"Apple","model":"Renewed iPhone 15","sku":"HS-056","retail":399.99,"promo":399.99,"publicFrom":79.99,"channel":"Boost Retail Hotsheet 8/4/2026","condition":"Renewed","active":true,"boostProtect":12,"offers":[{"planId":"premium-60","transactionTypes":["Upgrade"],"minMonths":0,"price":399.99,"title":"Upgrade \u2014 Hotsheet 8/4/2026 — $60 plan / no bill due today","note":"iPhone Upgrade promo requires the $60 plan. No prepaid service/bill payment is required today. Verify device eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Add-a-Line"],"minMonths":1,"price":139.99,"title":"Add-a-Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["Port-In"],"minMonths":1,"price":79.99,"title":"Port-In \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."},{"planId":"premium-60","transactionTypes":["New Line"],"minMonths":1,"price":139.99,"title":"New Line \u2014 Hotsheet 8/4/2026","note":"Boost Device Hotsheet 8/4/2026. Verify eligibility in RPD/POS before final sale."}]}],
+  plans: [
+    { id:'unlimited-25', name:'Unlimited', price:25, description:'30GB premium data. $25/mo with AutoPay ($30 without). New-customer offer: $10/mo for first 3 months, then $25.', introPrice:10, introMonths:3, introTransactionTypes:['New Line','Port-In'], active:true },
+    { id:'global-40', name:'Global Connection', price:40, description:'40GB premium data, Global Talk & Text, and 1GB Global Roaming. AutoPay price.', active:true },
+    { id:'plus-50', name:'Unlimited+', price:50, description:'40GB premium data, hotspot, Global Talk & Text. $50 with AutoPay ($55 without). Multi-line discount may apply.', active:true },
+    { id:'premium-60', name:'Unlimited Premium', price:60, description:'50GB premium data, hotspot, Global Talk & Text, North America Connect. $60 with AutoPay ($65 without). Multi-line discount may apply.', active:true }
+  ],
+  accessories: [
+    { id:'acc-1', sku:'CASE-STD', name:'Protective Case', price:24.99, cost:8, active:true },
+    { id:'acc-2', sku:'GLASS-STD', name:'Tempered Glass', price:19.99, cost:4, active:true },
+    { id:'acc-3', sku:'CHARGE-USB-C', name:'USB-C Charger', price:29.99, cost:10, active:true }
+  ],
+  promotions: [
+    { id:'promo-plan-10', name:'Unlimited Intro — $10 × 3 months', description:'New customers only. Then $25/mo with AutoPay. Taxes/fees apply.', amount:15, active:true },
+    { id:'promo-multiline-2', name:'Unlimited+/Premium — 2 lines save $20', description:'Current Boost multi-line promotion shown for $50/$60 plans. Verify account eligibility.', amount:20, active:true },
+    { id:'promo-multiline-3', name:'Unlimited+/Premium — 3 lines save $40', description:'Current Boost multi-line promotion shown for $50/$60 plans. Verify account eligibility.', amount:40, active:true },
+    { id:'promo-a16', name:'Galaxy A16 5G FREE', description:'In-store with Unlimited+ and qualifying keep-your-number/port-in. Verify eligibility.', amount:169.99, active:true },
+    { id:'promo-16e', name:'iPhone 16e On Us', description:'In-store qualifying switch/keep-number offer with Unlimited Premium, 2 months prepaid and ID verification.', amount:599.99, active:true },
+    { id:'promo-motog', name:'moto g 2026 $4.99', description:'In-store qualifying switch/keep-number offer with Unlimited Premium and ID verification.', amount:195, active:true }
+  ],
+  settings: {
+    storeName:'Boost Mobile', storeAddress:'730 Flatbush Ave, Brooklyn, NY 11226', storePhone:'', taxRate:8.875, activationFee:35,
+    protectMonthly:12, taxDevice:true, taxAccessories:true, taxPlan:false, taxProtect:false, taxActivation:false, taxAdditionalFees:false,
+    taxDeviceOnRetail:true, quotePrefix:'BQ', quoteValidityDays:7, currency:'USD'
+  }
+};
+
+function moneyNumber(value) {
+  const n = Number(value);
+  return Number.isFinite(n) ? Math.max(0, n) : 0;
+}
+
+function roundMoney(value) {
+  return Math.round((Number(value) + Number.EPSILON) * 100) / 100;
+}
+
+function getDeviceOffer(device, plan, input) {
+  if (!device || !plan || !Array.isArray(device.offers)) return null;
+  const tx = input.transactionType || 'General Quote';
+  const months = tx === 'Upgrade'
+    ? 0
+    : Math.min(12, Math.max(1, parseInt(input.months || 1, 10)));
+  return device.offers
+    .filter(o =>
+      o.planId === plan.id &&
+      (!o.transactionTypes || o.transactionTypes.includes(tx)) &&
+      (tx === 'Upgrade' || months >= (o.minMonths || 1))
+    )
+    .sort((a,b) => moneyNumber(a.price) - moneyNumber(b.price))[0] || null;
+}
+
+function getOfferForTransaction(device, plan, months, transactionType) {
+  if (!device || !plan || !Array.isArray(device.offers)) return null;
+  const paidMonths = transactionType === 'Upgrade'
+    ? 0
+    : Math.min(12, Math.max(1, parseInt(months || 1, 10)));
+  return device.offers
+    .filter(o =>
+      o.planId === plan.id &&
+      (!o.transactionTypes || o.transactionTypes.includes(transactionType)) &&
+      (transactionType === 'Upgrade' || paidMonths >= (o.minMonths || 1))
+    )
+    .sort((a,b) => moneyNumber(a.price) - moneyNumber(b.price))[0] || null;
+}
+
+function getTransactionDevicePrice(device, plan, months, transactionType) {
+  const offer = getOfferForTransaction(device, plan, months, transactionType);
+  const standard = moneyNumber(device?.promo ?? device?.retail);
+  return { price: offer ? moneyNumber(offer.price) : standard, offer, isPromo: !!offer };
+}
+
+function calculateQuote(input, data) {
+  const settings = data.settings || {};
+  const device = data.devices.find(d => d.id === input.deviceId && d.active);
+  const plan = data.plans.find(p => p.id === input.planId && p.active);
+  const isUpgrade = input.transactionType === 'Upgrade';
+  const months = isUpgrade ? 0 : Math.min(12, Math.max(1, parseInt(input.months || 1, 10)));
+  const qty = Math.max(1, Math.min(10, parseInt(input.lineQty || 1, 10)));
+
+  const deviceOffer = getDeviceOffer(device, plan, input);
+  const deviceRetailEach = device ? moneyNumber(device.retail) : 0;
+  const devicePriceEach = device ? moneyNumber(deviceOffer ? deviceOffer.price : (device.promo ?? device.retail)) : 0;
+  const deviceRetail = roundMoney(deviceRetailEach * qty);
+  const devicePrice = roundMoney(devicePriceEach * qty);
+
+  const basePlanMonthlyEach = plan ? moneyNumber(plan.price) : 0;
+  const introEligible = !!(plan && qty === 1 && plan.introPrice != null && Array.isArray(plan.introTransactionTypes) && plan.introTransactionTypes.includes(input.transactionType));
+  const introMonthsApplied = introEligible ? Math.min(months, moneyNumber(plan.introMonths)) : 0;
+  const regularMonthsApplied = Math.max(0, months - introMonthsApplied);
+  let planTotalEach = plan ? roundMoney((introMonthsApplied * moneyNumber(plan.introPrice)) + (regularMonthsApplied * basePlanMonthlyEach)) : 0;
+  let multiLineDiscount = 0;
+  if (plan && ['plus-50','premium-60'].includes(plan.id) && qty >= 2) {
+    const discountPerMonth = qty === 2 ? 20 : 40;
+    multiLineDiscount = roundMoney(discountPerMonth * months);
+  }
+  const planMonthlyEach = basePlanMonthlyEach;
+  const planMonthly = roundMoney(basePlanMonthlyEach * qty);
+  const planTotalBeforeMulti = roundMoney(planTotalEach * qty);
+  const planTotal = roundMoney(Math.max(0, planTotalBeforeMulti - multiLineDiscount));
+
+  const protectRateEach = device
+    ? (String(device.brand || '').trim().toLowerCase() === 'apple' ? 12 : 8)
+    : 0;
+  const protectMonthlyEach = input.protect ? protectRateEach : 0;
+  const protectMonthly = roundMoney(protectMonthlyEach * qty);
+  // No service/bill payment is collected today on an Upgrade.
+  // Protect remains a recurring monthly charge, shown in Estimated Monthly.
+  const protectTotal = isUpgrade ? 0 : roundMoney(protectMonthly * months);
+
+  const selectedAccessories = (input.accessoryIds || [])
+    .map(id => data.accessories.find(a => a.id === id && a.active))
+    .filter(Boolean);
+  const accessoriesSubtotal = roundMoney(selectedAccessories.reduce((sum, a) => sum + moneyNumber(a.price), 0));
+  const accessoryDiscountRequested = selectedAccessories.length ? moneyNumber(input.accessoryDiscount) : 0;
+  const accessoryDiscount = roundMoney(Math.min(accessoryDiscountRequested, accessoriesSubtotal));
+  const accessoriesNet = roundMoney(accessoriesSubtotal - accessoryDiscount);
+
+  const activationFeeEach = input.waiveActivation ? 0 : moneyNumber(input.activationFee ?? settings.activationFee);
+  const activationFee = roundMoney(activationFeeEach * qty);
+  const additionalFees = moneyNumber(input.additionalFees);
+  const tradeIn = moneyNumber(input.tradeIn);
+  const manualDiscount = moneyNumber(input.manualDiscount);
+
+  const pretaxBeforeGeneralDiscounts = roundMoney(devicePrice + planTotal + protectTotal + accessoriesNet + activationFee + additionalFees);
+  const generalDiscounts = roundMoney(Math.min(tradeIn + manualDiscount, pretaxBeforeGeneralDiscounts));
+
+  let taxableBase = 0;
+  if (settings.taxDevice) taxableBase += settings.taxDeviceOnRetail ? deviceRetail : devicePrice;
+  if (settings.taxAccessories) taxableBase += accessoriesNet;
+  if (settings.taxPlan) taxableBase += planTotal;
+  if (settings.taxProtect) taxableBase += protectTotal;
+  if (settings.taxActivation) taxableBase += activationFee;
+  if (settings.taxAdditionalFees) taxableBase += additionalFees;
+  taxableBase = roundMoney(Math.max(0, taxableBase - generalDiscounts));
+
+  const tax = roundMoney(taxableBase * moneyNumber(settings.taxRate) / 100);
+  const subtotal = roundMoney(pretaxBeforeGeneralDiscounts - generalDiscounts);
+  const total = roundMoney(subtotal + tax);
+  const deviceSavings = roundMoney(Math.max(0, deviceRetail - devicePrice));
+  const totalSavings = roundMoney(deviceSavings + accessoryDiscount + generalDiscounts);
+  const recurringPlanMonthly = plan && ['plus-50','premium-60'].includes(plan.id) && qty >= 2 ? Math.max(0, planMonthly - (qty===2?20:40)) : planMonthly;
+  const estimatedMonthly = roundMoney(recurringPlanMonthly + protectMonthly);
+
+  return {
+    months, isUpgrade, qty, device, plan, deviceOffer, introEligible, introMonthsApplied, multiLineDiscount, selectedAccessories,
+    deviceRetailEach, devicePriceEach, deviceRetail, devicePrice, deviceSavings,
+    planMonthlyEach, planMonthly, planTotal,
+    protectMonthlyEach, protectMonthly, protectTotal,
+    accessoriesSubtotal, accessoryDiscount, accessoriesNet,
+    activationFeeEach, activationFee, additionalFees,
+    tradeIn, manualDiscount, generalDiscounts,
+    taxableBase, tax, subtotal, total, totalSavings, estimatedMonthly
+  };
+}
+
+const KEYS = {
+  data: 'boostQuote.data.v4_6',
+  quotes: 'boostQuote.quotes.v1',
+  session: 'boostQuote.session.v1'
+};
+
+const clone = obj => JSON.parse(JSON.stringify(obj));
+
+function loadData() {
+  try {
+    let raw = localStorage.getItem(KEYS.data);
+    if (!raw) raw = localStorage.getItem('boostQuote.data.v3_9');
+    if (!raw) raw = localStorage.getItem('boostQuote.data.v3_8');
+    if (!raw) raw = localStorage.getItem('boostQuote.data.v3_4');
+    if (!raw) raw = localStorage.getItem('boostQuote.data.v3_1');
+    if (!raw) {
+      // One-time migration from v3.0, preserving stock selections and catalog/settings.
+      raw = localStorage.getItem('boostQuote.data.v3_0');
+    }
+    if (!raw) {
+      raw = localStorage.getItem('boostQuote.data.v2_9');
+    }
+    if (!raw) {
+      const fresh=clone(DEFAULT_DATA);
+      fresh.devices.forEach(d=>d.inStock=false);
+      return fresh;
+    }
+    const parsed = JSON.parse(raw);
+    const merged = {
+      ...clone(DEFAULT_DATA),
+      ...parsed,
+      settings: { ...clone(DEFAULT_DATA.settings), ...(parsed.settings || {}) }
+    };
+    // Safari/local-storage self repair: never allow an old or damaged empty catalog
+    // to blank the quote builder.
+    if (!Array.isArray(merged.devices) || merged.devices.length === 0) merged.devices = clone(DEFAULT_DATA.devices);
+    if (!Array.isArray(merged.plans) || merged.plans.length === 0) merged.plans = clone(DEFAULT_DATA.plans);
+    if (!Array.isArray(merged.accessories)) merged.accessories = clone(DEFAULT_DATA.accessories);
+    if (!Array.isArray(merged.promotions)) merged.promotions = clone(DEFAULT_DATA.promotions);
+    // Inventory is intentionally opt-in. Missing stock flags mean hidden from Promo Display.
+    merged.devices.forEach(d=>{ if(typeof d.inStock!=='boolean') d.inStock=false; });
+    return merged;
+  } catch {
+    return clone(DEFAULT_DATA);
+  }
+}
+
+function saveData(data) {
+  try {
+    const payload=JSON.stringify(data);
+    localStorage.setItem(KEYS.data,payload);
+    return localStorage.getItem(KEYS.data)===payload;
+  } catch(e) {
+    console.error('Boost Quote storage error',e);
+    return false;
+  }
+}
+
+function resetData() {
+  const fresh=clone(DEFAULT_DATA); fresh.devices.forEach(d=>d.inStock=false);
+  saveData(fresh);
+  return loadData();
+}
+
+function loadQuotes() {
+  try { return JSON.parse(localStorage.getItem(KEYS.quotes) || '[]'); } catch { return []; }
+}
+
+function saveQuotes(quotes) {
+  try { localStorage.setItem(KEYS.quotes, JSON.stringify(quotes)); } catch {}
+}
+
+function getSession() {
+  try { return JSON.parse(sessionStorage.getItem(KEYS.session) || 'null'); } catch { return null; }
+}
+
+function setSession(user) {
+  try { if (user) sessionStorage.setItem(KEYS.session, JSON.stringify(user));
+  else sessionStorage.removeItem(KEYS.session); } catch {}
+}
+
+function makeId(prefix='id') {
+  if (globalThis.crypto?.randomUUID) return `${prefix}-${crypto.randomUUID()}`;
+  return `${prefix}-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
+function quoteNumber(prefix='BQ') {
+  const d = new Date();
+  const ymd = `${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}`;
+  const rand = Math.floor(1000 + Math.random() * 9000);
+  return `${prefix}-${ymd}-${rand}`;
+}
+
+let data = loadData();
+let quotes = loadQuotes();
+let currentUser = {username:'advocate', role:'advocate', displayName:'Sales Advocate'};
+let currentQuoteId = null;
+let installPrompt = null;
+let catalogSection = 'devices';
+
+const $ = id => document.getElementById(id);
+const money = v => new Intl.NumberFormat('en-US',{style:'currency',currency:data.settings.currency || 'USD'}).format(Number(v)||0);
+const esc = s => String(s ?? '').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+const toast = msg => { const t=$('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toast.timer); toast.timer=setTimeout(()=>t.classList.remove('show'),2200); };
+const SECURITY = Object.freeze({
+  maxCatalogBytes: 2 * 1024 * 1024,
+  maxPdfBytes: 10 * 1024 * 1024,
+  maxPdfFiles: 10,
+  maxSavedQuotes: 300,
+  idlePiiClearMs: 30 * 60 * 1000
+});
+const clampNumber=(v,min=0,max=100000)=>{const n=Number(v);return Number.isFinite(n)?Math.min(max,Math.max(min,n)):min;};
+const safeText=(v,max=500)=>String(v??'').replace(/[\u0000-\u001F\u007F]/g,' ').slice(0,max);
+const safeId=v=>safeText(v,100).replace(/[^A-Za-z0-9._:-]/g,'-');
+function deepSanitize(value,depth=0){
+  if(depth>8) return null;
+  if(value===null||typeof value==='boolean') return value;
+  if(typeof value==='number') return Number.isFinite(value)?value:0;
+  if(typeof value==='string') return safeText(value,2000);
+  if(Array.isArray(value)) return value.slice(0,1000).map(v=>deepSanitize(v,depth+1));
+  if(typeof value==='object'){
+    const out={};
+    for(const [k,v] of Object.entries(value).slice(0,500)){
+      if(['__proto__','prototype','constructor'].includes(k)) continue;
+      out[safeText(k,80)]=deepSanitize(v,depth+1);
+    }
+    return out;
+  }
+  return null;
+}
+function validateImportedCatalog(raw){
+  const x=deepSanitize(raw);
+  if(!x||typeof x!=='object'||!x.settings||!Array.isArray(x.devices)||!Array.isArray(x.plans)||!Array.isArray(x.accessories)) throw new Error('schema');
+  if(x.devices.length>250||x.plans.length>50||x.accessories.length>500||(x.promotions?.length||0)>250) throw new Error('limits');
+  const seen=new Set();
+  for(const collection of ['devices','plans','accessories','promotions']){
+    if(!Array.isArray(x[collection])) x[collection]=[];
+    for(const row of x[collection]){
+      if(!row||typeof row!=='object') throw new Error('row');
+      row.id=safeId(row.id||makeId(collection.slice(0,3)));
+      const key=collection+':'+row.id;if(seen.has(key)) throw new Error('duplicate id');seen.add(key);
+      if('retail' in row) row.retail=clampNumber(row.retail,0,10000);
+      if('promo' in row) row.promo=clampNumber(row.promo,0,10000);
+      if('publicFrom' in row) row.publicFrom=clampNumber(row.publicFrom,0,10000);
+      if('price' in row) row.price=clampNumber(row.price,0,10000);
+      if('cost' in row) row.cost=clampNumber(row.cost,0,10000);
+      if('amount' in row) row.amount=clampNumber(row.amount,-10000,10000);
+      row.active=!!row.active;
+      if(collection==='devices') row.inStock=!!row.inStock;
+      if(Array.isArray(row.offers)) row.offers=row.offers.slice(0,50).map(o=>({...o,planId:safeId(o.planId),transactionTypes:Array.isArray(o.transactionTypes)?o.transactionTypes.slice(0,10).map(t=>safeText(t,40)):[],minMonths:clampNumber(o.minMonths,1,12),price:clampNumber(o.price,0,10000),title:safeText(o.title,160),note:safeText(o.note,500)}));
+    }
+  }
+  x.settings={...clone(DEFAULT_DATA.settings),...x.settings};
+  x.settings.storeName=safeText(x.settings.storeName,120);x.settings.storeAddress=safeText(x.settings.storeAddress,180);x.settings.storePhone=safeText(x.settings.storePhone,40);
+  x.settings.taxRate=clampNumber(x.settings.taxRate,0,25);x.settings.activationFee=clampNumber(x.settings.activationFee,0,500);x.settings.protectMonthly=clampNumber(x.settings.protectMonthly,0,200);
+  x.users=[]; // never import credentials into a client-only build
+  return x;
+}
+function redactPhoneForStorage(phone){
+  const raw=safeText(phone,30), digits=raw.replace(/\D/g,'');
+  if(!digits) return '';
+  return digits.length>=4?`•••-•••-${digits.slice(-4)}`:'••••';
+}
+function hardenInputs(){
+  const limits={customerName:80,customerPhone:30,salesRep:80,quoteNote:500,historySearch:100};
+  for(const [id,max] of Object.entries(limits)){const el=$(id);if(el){el.maxLength=max;el.autocomplete='off';el.spellcheck=false;}}
+  document.querySelectorAll('input[type="number"]').forEach(el=>{if(!el.min)el.min='0';if(!el.max)el.max='10000';});
+  document.querySelectorAll('form').forEach(f=>f.setAttribute('autocomplete','off'));
+}
+let lastVisibleAt=Date.now();
+function installPrivacyGuard(){
+  document.addEventListener('visibilitychange',()=>{
+    if(document.hidden){lastVisibleAt=Date.now();return;}
+    if(Date.now()-lastVisibleAt>SECURITY.idlePiiClearMs && !currentQuoteId){
+      ['customerName','customerPhone','quoteNote'].forEach(id=>{if($(id))$(id).value='';});
+      renderQuote();toast('Unsaved customer details cleared after inactivity');
+    }
+  });
+}
+
+
+function boot(){
+  $('versionText').textContent=`v${APP_VERSION}`;
+  hardenInputs();
+  installPrivacyGuard();
+  bindEvents();
+  showApp();
+}
+
+function bindEvents(){
+  $('loginForm').addEventListener('submit', login);
+  $('logoutBtn').onclick=logout;
+  $('menuBtn').onclick=()=>document.querySelector('.sidebar').classList.toggle('open');
+  document.querySelectorAll('.nav-btn').forEach(b=>b.onclick=()=>navigate(b.dataset.view));
+  ['transactionType','deviceType','customerName','customerPhone','salesRep','quoteNote','deviceId','lineQty','planId','months','protect','accessoryDiscount','activationFee','additionalFees','tradeIn','manualDiscount','waiveActivation'].forEach(id=>$(id).addEventListener('input',renderQuote));
+  $('deviceType').addEventListener('change',()=>{renderSelectors();renderGuidedChoices();renderDevicePriceMatrix();renderQuote();});
+  $('saveQuoteBtn').onclick=saveCurrentQuote;
+  $('copyQuoteBtn').onclick=copyQuote;
+  $('shareQuoteBtn').onclick=shareQuote;
+  $('printQuoteBtn').onclick=()=>window.print();
+  $('newQuoteBtn').onclick=clearQuote;
+  $('quickResetBtn').onclick=clearQuote;
+  $('historySearch').addEventListener('input',renderHistory);
+  $('exportQuotesBtn').onclick=()=>downloadJson('boost-quotes.json',quotes);
+  $('saveSettingsBtn').onclick=saveSettingsFromUI;
+  $('exportCatalogBtn').onclick=()=>downloadJson('boost-quote-backup.json',data);
+  $('importCatalogBtn').onclick=()=>$('catalogFile').click();
+  $('catalogFile').onchange=importCatalog;
+  $('resetCatalogBtn').onclick=()=>{if(confirm('Reset catalog and settings to demo data? Quote history will be kept.')){data=resetData();renderAll();toast('Demo catalog restored');}};
+  $('pdfUpload').onchange=uploadPdfs;
+
+  $('setManagerPinBtn').onclick=setManagerPin;
+  $('unlockPricingBtn').onclick=unlockPricingUpdates;
+  $('lockPricingBtn').onclick=lockPricingUpdates;
+  $('changeManagerPinBtn').onclick=beginManagerPinChange;
+  $('savePricingPdfBtn').onclick=savePricingPdf;
+  $('refreshPricingDocsBtn').onclick=renderPricingDocHistory;
+  $('applyPricingJsonBtn').onclick=applyPricingJsonUpdate;
+
+  $('installBtn').onclick=async()=>{if(installPrompt){installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;$('installBtn').classList.add('hidden');}};
+  window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;$('installBtn').classList.remove('hidden');});
+}
+
+function login(e){
+  e.preventDefault();
+  $('loginError').textContent='Privileged local login is disabled in Hardened Mode. Use the quote screen; production administration requires server authentication.';
+}
+function logout(){ currentUser={username:'advocate',role:'advocate',displayName:'Sales Advocate'}; showApp(); toast('Quote mode ready'); }
+function showLogin(){$('loginView').classList.remove('hidden');$('appView').classList.add('hidden');}
+function showApp(){
+  $('loginView').classList.add('hidden'); $('appView').classList.remove('hidden');
+  $('userBadge').innerHTML=`<strong>${esc(currentUser.displayName)}</strong><div class="user-role">${esc(currentUser.role)}</div>`;
+  document.querySelectorAll('.admin-only').forEach(x=>x.classList.toggle('hidden',currentUser.role!=='admin'));
+  document.querySelectorAll('.manager-only').forEach(x=>x.classList.toggle('hidden',!['manager','admin'].includes(currentUser.role)));
+  $('salesRep').value=$('salesRep').value||currentUser.displayName;
+  renderAll(); navigate('quote');
+}
+function navigate(view){
+  if(view==='admin'&&currentUser.role!=='admin')return;
+  if(view==='reports'&&!['manager','admin'].includes(currentUser.role))return;
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active')); $(view+'View').classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
+  $('pageTitle').textContent={quote:'Create Quote',history:'Quote History',updates:'Pricing Updates',reports:'Quote Reports',admin:'Admin & Pricing'}[view];
+  document.querySelector('.sidebar').classList.remove('open');
+  if(view==='history')renderHistory(); if(view==='updates')renderPricingUpdateAccess(); if(view==='reports')renderReports(); if(view==='admin'){renderSettings();renderCatalog();renderPdfList();}
+}
+function renderAll(){
+  $('storeLine').textContent=`${data.settings.storeName} · ${data.settings.storeAddress} · Hotsheet effective Aug 4, 2026 · No EOL`;
+  $('paperStoreName').textContent=data.settings.storeName;
+  $('paperStoreAddress').textContent=data.settings.storeAddress;
+  if(!$('activationFee').value)$('activationFee').value=data.settings.activationFee;
+  renderSelectors(); renderAccessories(); renderStockManager(); renderGuidedChoices(); renderDevicePriceMatrix(); renderQuote(); renderHistory(); renderReports(); renderSettings(); renderCatalog();
+}
+
+
+function syncIPhoneUpgradeRule(){
+  const tx=$('transactionType')?.value || '';
+  const device=data.devices.find(d=>d.id===$('deviceId')?.value&&d.active);
+  const planEl=$('planId');
+  let note=document.getElementById('iphoneUpgradeRuleNote');
+  if(!note){
+    note=document.createElement('div');
+    note.id='iphoneUpgradeRuleNote';
+    note.style.cssText='display:none;margin-top:8px;padding:10px 12px;border-radius:10px;background:#fff7ed;border:1px solid #fdba74;color:#9a3412;font-size:13px;font-weight:800';
+    const host=planEl?.closest('label')?.parentElement || planEl?.parentElement;
+    if(host) host.appendChild(note);
+  }
+  const isIPhoneUpgrade=tx==='Upgrade' && device && String(device.brand||'').toLowerCase()==='apple';
+  if(isIPhoneUpgrade && planEl){
+    if([...planEl.options].some(o=>o.value==='premium-60')) planEl.value='premium-60';
+  }
+  if(note){
+    note.style.display=isIPhoneUpgrade?'block':'none';
+    note.textContent='iPhone Upgrade Promo: $60 plan required. No prepaid bill/service payment is due today.';
+  }
+}
+function syncUpgradeUI(){
+  const tx=$('transactionType')?.value || '';
+  const monthsEl=$('months');
+  if(!monthsEl)return;
+  if(tx==='Upgrade'){
+    monthsEl.innerHTML='<option value="0">0 months — no bill payment due today</option>';
+    monthsEl.value='0';
+    monthsEl.disabled=true;
+    monthsEl.title='Upgrade: no service bill payment is required today.';
+  }else{
+    const oldValue=(monthsEl.value && monthsEl.value!=='0') ? monthsEl.value : '1';
+    monthsEl.disabled=false;
+    monthsEl.title='';
+    monthsEl.innerHTML=Array.from({length:12},(_,i)=>`<option value="${i+1}">${i+1} month${i?'s':''}</option>`).join('');
+    monthsEl.value=[...monthsEl.options].some(o=>o.value===oldValue)?oldValue:'1';
+  }
+}
+function syncProtectLabel(){
+  const el=$('protect');
+  if(!el)return;
+  const device=data.devices.find(d=>d.id===$('deviceId')?.value&&d.active);
+  let label=document.getElementById('protectDynamicLabel');
+  if(!label){
+    label=document.createElement('small');
+    label.id='protectDynamicLabel';
+    label.style.cssText='display:block;margin:5px 0 0 24px;color:#64748b;font-weight:700';
+    el.closest('label')?.appendChild(label);
+  }
+  if(!label)return;
+  if(!device){label.textContent='Select a device to see protection price.';return;}
+  const rate=String(device.brand||'').trim().toLowerCase()==='apple'?12:8;
+  label.textContent=`${device.brand==='Apple'?'Apple':'Android'} Boost Protect: ${money(rate)}/month per device`;
+}
+
+function renderSelectors(){
+  const typeEl=$('deviceType');
+  const selectedType=typeEl ? (typeEl.value||'all') : 'all';
+  const selectedDevice=$('deviceId').value, selectedPlan=$('planId').value, selectedMonths=$('months').value||'1';
+  const allDevices=Array.isArray(data.devices)?data.devices.filter(x=>x&&x.active):[];
+  const dv=selectedType==='all' ? allDevices : allDevices.filter(d=>(d.condition||'New')===selectedType);
+  if(typeEl){
+    const counts={New:0,'Certified Pre-Owned':0,Renewed:0};
+    allDevices.forEach(d=>{const k=d.condition||'New';if(k in counts)counts[k]++;});
+    typeEl.innerHTML=`<option value="all">All phones (${allDevices.length})</option><option value="New">New (${counts.New})</option><option value="Certified Pre-Owned">Certified Pre-Owned (${counts['Certified Pre-Owned']})</option><option value="Renewed">Renewed (${counts.Renewed})</option>`;
+    typeEl.value=[...typeEl.options].some(o=>o.value===selectedType)?selectedType:'all';
+  }
+  $('deviceId').innerHTML='<option value="">No device / BYOD</option>'+dv.map(d=>`<option value="${esc(d.id)}">${esc(d.brand)} ${esc(d.model)} — retail ${money(d.retail)}</option>`).join('');
+  const pl=Array.isArray(data.plans)?data.plans.filter(x=>x&&x.active):[];
+  $('planId').innerHTML='<option value="">Select plan</option>'+pl.map(p=>`<option value="${esc(p.id)}">${esc(p.name)} — ${money(p.price)}/mo</option>`).join('');
+  $('months').innerHTML=Array.from({length:12},(_,i)=>`<option value="${i+1}">${i+1} month${i?'s':''}</option>`).join('');
+  if([...$('deviceId').options].some(o=>o.value===selectedDevice))$('deviceId').value=selectedDevice;
+  else $('deviceId').value='';
+  if([...$('planId').options].some(o=>o.value===selectedPlan))$('planId').value=selectedPlan;
+  else if(pl.length) $('planId').value=pl[0].id;
+  if([...$('months').options].some(o=>o.value===selectedMonths))$('months').value=selectedMonths;
+  syncIPhoneUpgradeRule();
+  syncUpgradeUI();
+  syncProtectLabel();
+}
+
+function getStockManagerRows(){
+  const q=safeText($('stockSearch')?.value||'',80).toLowerCase();
+  return (Array.isArray(data.devices)?data.devices:[])
+    .filter(d=>d&&d.active!==false&&d.eol!==true&&String(d.status||'').toLowerCase()!=='eol')
+    .filter(d=>!q||`${d.brand||''} ${d.model||''} ${d.sku||''}`.toLowerCase().includes(q))
+    .sort((a,b)=>(Number(!!b.inStock)-Number(!!a.inStock))||String(a.brand||'').localeCompare(String(b.brand||''))||String(a.model||'').localeCompare(String(b.model||'')));
+}
+
+function applyStockChange(deviceId,inStock){
+  const d=(data.devices||[]).find(x=>String(x.id)===String(deviceId));
+  if(!d){toast('Device not found');return;}
+  d.inStock=!!inStock;
+  const saved=saveData(data);
+  if(!saved){
+    alert('Stock change could not be saved in this browser. Make sure you are not in Private Browsing and site storage is allowed.');
+    return;
+  }
+  renderStockManager();
+  renderGuidedChoices();
+  renderDevicePriceMatrix();
+  renderSelectors();
+  if(catalogSection==='devices')renderCatalog();
+  renderQuote();
+  toast(`${d.model} ${d.inStock?'added to':'removed from'} stock`);
+}
+
+function renderStockManager(){
+  const host=$('promoStockManager'); if(!host)return;
+  const rows=getStockManagerRows();
+  const totalInStock=(data.devices||[]).filter(d=>d&&d.active!==false&&d.inStock===true).length;
+  if($('stockCount'))$('stockCount').textContent=`${totalInStock} phone${totalInStock===1?'':'s'} in stock`;
+
+  host.innerHTML=rows.length?rows.map(d=>`
+    <div class="stock-device-card ${d.inStock?'in-stock':''}" data-stock-card="${esc(d.id)}">
+      <div>
+        <div class="stock-device-name">${esc(d.brand||'')} ${esc(d.model||'')}</div>
+        <div class="stock-device-meta">${esc(d.deviceType||d.condition||'Active device')}${d.sku?` · ${esc(d.sku)}`:''}</div>
+      </div>
+      <button type="button" class="btn ${d.inStock?'secondary':'primary'}" data-stock-action="${d.inStock?'remove':'add'}" data-stock-id="${esc(d.id)}">
+        ${d.inStock?'✓ In Stock — Remove':'＋ Add to Stock'}
+      </button>
+    </div>`).join(''):'<p class="muted">No active devices match this search.</p>';
+
+  host.querySelectorAll('[data-stock-action]').forEach(btn=>{
+    btn.onclick=()=>{
+      applyStockChange(btn.dataset.stockId,btn.dataset.stockAction==='add');
+    };
+  });
+
+  const search=$('stockSearch');
+  if(search&&!search.dataset.bound){
+    search.dataset.bound='1';
+    search.addEventListener('input',renderStockManager);
+  }
+
+  const addAll=$('addVisibleStock');
+  if(addAll&&!addAll.dataset.bound){
+    addAll.dataset.bound='1';
+    addAll.onclick=()=>{
+      const visible=getStockManagerRows();
+      if(!visible.length)return;
+      visible.forEach(d=>d.inStock=true);
+      if(!saveData(data)){alert('Stock changes could not be saved in this browser.');return;}
+      renderStockManager();renderGuidedChoices();renderDevicePriceMatrix();renderSelectors();
+      if(catalogSection==='devices')renderCatalog();
+      renderQuote();toast(`${visible.length} visible device${visible.length===1?'':'s'} added to stock`);
+    };
+  }
+
+  const removeAll=$('removeVisibleStock');
+  if(removeAll&&!removeAll.dataset.bound){
+    removeAll.dataset.bound='1';
+    removeAll.onclick=()=>{
+      const visible=getStockManagerRows();
+      if(!visible.length)return;
+      if(!confirm(`Remove ${visible.length} visible device${visible.length===1?'':'s'} from stock?`))return;
+      visible.forEach(d=>d.inStock=false);
+      if(!saveData(data)){alert('Stock changes could not be saved in this browser.');return;}
+      renderStockManager();renderGuidedChoices();renderDevicePriceMatrix();renderSelectors();
+      if(catalogSection==='devices')renderCatalog();
+      renderQuote();toast(`${visible.length} visible device${visible.length===1?'':'s'} removed from stock`);
+    };
+  }
+}
+
+function renderGuidedChoices(){
+  const txHost=$('transactionChoices'), planHost=$('planChoices'), offerHost=$('bestDeviceOffers');
+  if(!txHost||!planHost||!offerHost)return;
+  const txs=['New Line','Port-In','Upgrade','Add-a-Line','BYOD'];
+  const selectedTx=$('transactionType').value;
+  txHost.innerHTML=txs.map(tx=>`<button type="button" class="choice-btn ${selectedTx===tx?'active':''}" data-quick-tx="${esc(tx)}">${esc(tx)}</button>`).join('');
+  txHost.querySelectorAll('[data-quick-tx]').forEach(b=>b.onclick=()=>{$('transactionType').value=b.dataset.quickTx;renderQuote();});
+
+  const selectedPlan=$('planId').value;
+  planHost.innerHTML=data.plans.filter(p=>p.active).map(p=>`<button type="button" class="plan-choice ${selectedPlan===p.id?'active':''}" data-quick-plan="${esc(p.id)}"><strong>${esc(p.name)}</strong><b>${money(p.price)}/mo</b><small>${esc(p.description||'')}</small></button>`).join('');
+  planHost.querySelectorAll('[data-quick-plan]').forEach(b=>b.onclick=()=>{$('planId').value=b.dataset.quickPlan;renderQuote();});
+
+  const plan=data.plans.find(p=>p.id===$('planId').value&&p.active);
+  const months=Math.max(1,parseInt($('months').value||1,10));
+  if(selectedTx==='BYOD'){offerHost.innerHTML='<div class="offer-card"><span class="badge">BYOD</span><strong>Bring Your Own Device</strong><div class="offer-price">$0 device</div><small>Select service and add-ons to finish the quote.</small></div>';return;}
+  if(!plan){offerHost.innerHTML='<div class="offer-card"><span class="badge standard">Choose plan</span><strong>Select a plan above</strong><small>We will rank the best matching phone prices for that plan.</small></div>';return;}
+  const ranked=data.devices.filter(d=>d.active&&d.inStock===true).map(d=>{const r=getTransactionDevicePrice(d,plan,months,selectedTx);return{d,r,saving:Math.max(0,moneyNumber(d.retail)-r.price)}}).sort((a,b)=>Number(b.r.isPromo)-Number(a.r.isPromo)||b.saving-a.saving||a.r.price-b.r.price).slice(0,6);
+  if(!ranked.length){offerHost.innerHTML='<div class="offer-card"><span class="badge standard">NO STOCK SELECTED</span><strong>Promo Display is empty</strong><small>Open Manage Promo Stock below and mark the phones currently in the store. Other devices remain hidden here but stay available in the full catalog.</small></div>';return;}
+  offerHost.innerHTML=ranked.map(({d,r,saving})=>`<button type="button" class="offer-card ${$('deviceId').value===d.id?'active':''}" data-best-device="${esc(d.id)}"><span class="badge ${r.isPromo?'':'standard'}">${r.isPromo?(r.price===0?'FREE OFFER':'PROMO MATCH'):'STANDARD'}</span><strong>${esc(d.brand)} ${esc(d.model)}</strong><div class="offer-price">${money(r.price)}</div><small>${r.offer?esc(r.offer.title):`Retail ${money(d.retail)}`}${saving?` · Save ${money(saving)}`:''}</small></button>`).join('');
+  offerHost.querySelectorAll('[data-best-device]').forEach(b=>b.onclick=()=>{$('deviceId').value=b.dataset.bestDevice;renderQuote();});
+}
+
+function renderDevicePriceMatrix(){
+  const host=$('devicePriceMatrix'); if(!host)return;
+  const selectedDevice=$('deviceId').value;
+  const selectedTx=$('transactionType').value;
+  const plan=data.plans.find(p=>p.id===$('planId').value&&p.active);
+  const months=Math.max(1,parseInt($('months').value||1,10));
+  const txs=['New Line','Port-In','Upgrade','Add-a-Line'];
+  $('matrixContext').textContent=plan?`${plan.name} · ${months} month${months>1?'s':''} paid today · Tap any price to apply it`:'Select a plan to reveal qualifying promotional prices; standard prices remain visible.';
+  const inStockDevices=data.devices.filter(d=>d&&d.active&&d.inStock===true);
+  if(!inStockDevices.length){
+    host.innerHTML='<div class="empty-state"><strong>No in-stock devices to compare.</strong><br><span>Open Manage Promo Stock and check the phones currently available in the store.</span></div>';
+    return;
+  }
+  const rows=inStockDevices.map(d=>{
+    const cells=txs.map(tx=>{
+      const r=getTransactionDevicePrice(d,plan,months,tx);
+      const cls=['price-cell',r.isPromo?'promo':'',selectedDevice===d.id&&selectedTx===tx?'active-choice':''].filter(Boolean).join(' ');
+      const tag=r.isPromo?(r.price===0?'FREE':'Promo'):'Standard';
+      const title=r.offer?`${r.offer.title}: ${r.offer.note}`:'No matching transaction promotion loaded. Verify current Boost POS pricing.';
+      return `<td><button type="button" class="${cls}" data-matrix-device="${esc(d.id)}" data-matrix-tx="${tx}" title="${esc(title)}">${money(r.price)}<small>${tag}</small></button></td>`;
+    }).join('');
+    return `<tr class="${selectedDevice===d.id?'selected-device':''}"><td><span class="matrix-device">${esc(d.brand)} ${esc(d.model)}<small>Retail ${money(d.retail)}</small></span></td>${cells}</tr>`;
+  }).join('');
+  host.innerHTML=`<table class="device-price-matrix"><thead><tr><th>Device</th>${txs.map(tx=>`<th>${esc(tx)}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table>`;
+  host.querySelectorAll('[data-matrix-device]').forEach(btn=>btn.addEventListener('click',()=>{
+    $('deviceId').value=btn.dataset.matrixDevice;
+    $('transactionType').value=btn.dataset.matrixTx;
+    renderQuote();
+  }));
+}
+
+function renderAccessories(){
+  const chosen=new Set([...document.querySelectorAll('.acc-check:checked')].map(x=>x.value));
+  $('accessoriesList').innerHTML=data.accessories.filter(a=>a.active).map(a=>`<label class="acc-card"><input type="checkbox" class="acc-check" value="${esc(a.id)}" ${chosen.has(a.id)?'checked':''}><span><strong>${esc(a.name)}</strong><small>${esc(a.sku)} · ${money(a.price)}</small></span></label>`).join('');
+  document.querySelectorAll('.acc-check').forEach(c=>c.addEventListener('change',()=>{if(!document.querySelector('.acc-check:checked'))$('accessoryDiscount').value='0';renderQuote();}));
+}
+function getQuoteInput(){return{
+  transactionType:$('transactionType').value,
+  customerName:$('customerName').value.trim(), customerPhone:$('customerPhone').value.trim(), salesRep:$('salesRep').value.trim(), note:$('quoteNote').value.trim(),
+  deviceId:$('deviceId').value, lineQty:$('lineQty').value, planId:$('planId').value, months:$('months').value,
+  protect:$('protect').checked, protectMonthly:data.settings.protectMonthly,
+  accessoryIds:[...document.querySelectorAll('.acc-check:checked')].map(x=>x.value), accessoryDiscount:$('accessoryDiscount').value,
+  activationFee:$('activationFee').value, additionalFees:$('additionalFees').value, tradeIn:$('tradeIn').value, manualDiscount:$('manualDiscount').value,
+  waiveActivation:$('waiveActivation').checked
+};}
+function renderQuote(){
+  if(!$('appView')||$('appView').classList.contains('hidden'))return;
+  syncIPhoneUpgradeRule();
+  syncUpgradeUI();
+  syncProtectLabel();
+  const input=getQuoteInput(), c=calculateQuote(input,data);
+  renderGuidedChoices();
+  renderDevicePriceMatrix();
+  const saved=currentQuoteId?quotes.find(x=>x.id===currentQuoteId):null;
+  $('summaryCustomer').textContent=input.customerName||'Customer quote';
+  $('summaryMeta').textContent=[saved?.quoteNumber||'Unsaved quote',input.transactionType,`${c.qty} line${c.qty>1?'s':''}`,input.salesRep?`Rep: ${input.salesRep}`:''].filter(Boolean).join(' · ');
+  $('quoteStatus').textContent=saved?'Saved':'Draft';
+  $('editingBadge').classList.toggle('hidden',!saved); $('editingBadge').textContent=saved?`Editing ${saved.quoteNumber}`:'';
+  $('devicePricePreview').textContent=c.device?`${money(c.deviceRetailEach)} → ${money(c.devicePriceEach)}`:'BYOD / no device';
+  $('deviceSavingsPreview').textContent=c.deviceSavings?`Total device savings ${money(c.deviceSavings)}`:'';
+  const promoParts=[];
+  if(c.deviceOffer) promoParts.push(`<strong>${esc(c.deviceOffer.title)}</strong><span>${esc(c.deviceOffer.note)}</span>`);
+  else if(c.device && c.plan) {
+    if(input.transactionType==='Upgrade' && String(c.device.brand||'').toLowerCase()==='apple'){
+      promoParts.push(`<strong>iPhone Upgrade requires the $60 plan</strong><span>No prepaid bill/service payment is required today. Select Unlimited Premium $60 to apply the loaded upgrade promo.</span>`);
+    } else {
+      promoParts.push(`<strong>No automatic device promo matched</strong><span>Change transaction type, plan, or prepaid months, or verify another approved store offer.</span>`);
+    }
+  }
+  else promoParts.push(`<strong>Select a device and plan</strong><span>Eligible promotions will appear automatically.</span>`);
+  if(c.introEligible && c.plan?.introPrice != null) promoParts.push(`<span>Plan promo: ${money(c.plan.introPrice)}/mo for the first ${c.plan.introMonths} months for qualifying new customers.</span>`);
+  if(c.multiLineDiscount) promoParts.push(`<span>Multi-line savings applied today: ${money(c.multiLineDiscount)}.</span>`);
+  $('promoMatch').innerHTML=`<small>PROMOTION CHECK</small>${promoParts.join('')}`;
+  $('accessorySubtotalPreview').textContent=money(c.accessoriesSubtotal); $('accessoryNetPreview').textContent=c.accessoryDiscount?`After discount: ${money(c.accessoriesNet)}`:'';
+  const lines=[];
+  if(c.device)lines.push([`Device${c.qty>1?` × ${c.qty}`:''}`,`${c.device.brand} ${c.device.model} · ${money(c.devicePrice)}`]);
+  if(!c.device&&input.transactionType==='BYOD')lines.push(['Device','Bring Your Own Device']);
+  if(c.plan)lines.push([
+      c.isUpgrade?`${c.plan.name}${c.qty>1?` × ${c.qty} lines`:''} · recurring`:`${c.plan.name}${c.qty>1?` × ${c.qty} lines`:''} · ${c.months} mo`,
+      c.isUpgrade?'$0.00 due today':money(c.planTotal)
+    ]);
+  if(c.deviceOffer)lines.push(['Promo applied',c.deviceOffer.title]);
+  if(c.multiLineDiscount)lines.push(['Multi-line savings',`−${money(c.multiLineDiscount)}`]);
+  if(c.protectTotal)lines.push([`Boost Protect${c.qty>1?` × ${c.qty}`:''} · ${c.months} mo`,money(c.protectTotal)]);
+  c.selectedAccessories.forEach(a=>lines.push([a.name,money(a.price)]));
+  if(c.accessoryDiscount)lines.push(['Accessory discount',`−${money(c.accessoryDiscount)}`]);
+  if(c.activationFee)lines.push([`Activation${c.qty>1?` × ${c.qty}`:''}`,money(c.activationFee)]);
+  if(c.additionalFees)lines.push(['Additional fees',money(c.additionalFees)]);
+  if(c.tradeIn)lines.push(['Trade-in credit',`−${money(Math.min(c.tradeIn,c.generalDiscounts))}`]);
+  if(c.manualDiscount)lines.push(['Manual discount',`−${money(Math.min(c.manualDiscount,c.generalDiscounts))}`]);
+  $('summaryLines').innerHTML=lines.length?lines.map(x=>`<div class="sum-row"><span>${esc(x[0])}</span><span>${esc(x[1])}</span></div>`).join(''):'<p class="muted">Select a plan, device or accessory to build the quote.</p>';
+  $('subtotalOut').textContent=money(c.subtotal); $('taxOut').textContent=`${money(c.tax)} (${data.settings.taxRate}%)`; $('totalOut').textContent=money(c.total); $('monthlyOut').textContent=`${money(c.estimatedMonthly)}/mo`; $('savingsOut').textContent=money(c.totalSavings);
+  $('heroTotalOut').textContent=money(c.total); $('heroMonthlyOut').textContent=`Estimated monthly after prepaid period: ${money(c.estimatedMonthly)}/mo`;
+  const benefits=[];
+  if(c.deviceOffer)benefits.push(`Qualifying device offer selected: ${c.deviceOffer.title}`);
+  if(c.totalSavings)benefits.push(`Estimated savings: ${money(c.totalSavings)}`);
+  if(c.months>1)benefits.push(`${c.months} months of selected service included in today's quote`); if(c.isUpgrade)benefits.push('Upgrade: no service/bill payment due today');
+  if(c.protectTotal)benefits.push('Boost Protect included in the quote');
+  if(!benefits.length)benefits.push('Quote updates instantly as products and services are selected');
+  $('customerBenefits').innerHTML=benefits.map(x=>`<li>${esc(x)}</li>`).join('');
+  $('quoteNoteOut').classList.toggle('hidden',!input.note); $('quoteNoteOut').textContent=input.note?`Note: ${input.note}`:'';
+}
+function currentQuotePreview(){const input=getQuoteInput();return{quoteNumber:currentQuoteId?quotes.find(x=>x.id===currentQuoteId)?.quoteNumber:'PREVIEW',input,calculation:calculateQuote(input,data)};}
+function buildQuoteText(q){
+  const c=q.calculation||calculateQuote(q.input,data), i=q.input;
+  const accessories=c.selectedAccessories.map(a=>`• ${a.name}: ${money(a.price)}`);
+  return [
+    `${data.settings.storeName} — Customer Quote ${q.quoteNumber||''}`,
+    data.settings.storeAddress,
+    '', i.customerName?`Customer: ${i.customerName}`:'', i.customerPhone?`Phone: ${i.customerPhone}`:'',
+    `Transaction: ${i.transactionType||'General Quote'} · Lines: ${c.qty}`,
+    c.device?`Device: ${c.device.brand} ${c.device.model} — ${money(c.devicePrice)}`:(i.transactionType==='BYOD'?'Device: BYOD':''),
+    c.plan?`Service: ${c.plan.name} × ${c.months} month(s) — ${money(c.planTotal)}`:'',
+    c.deviceOffer?`Promotion: ${c.deviceOffer.title} — ${c.deviceOffer.note}`:'', c.multiLineDiscount?`Multi-line savings included: ${money(c.multiLineDiscount)}`:'',
+    c.protectTotal?`Boost Protect: ${money(c.protectTotal)}`:'', ...accessories,
+    c.accessoryDiscount?`Accessory discount: -${money(c.accessoryDiscount)}`:'', c.activationFee?`Activation: ${money(c.activationFee)}`:'',
+    c.additionalFees?`Additional fees: ${money(c.additionalFees)}`:'', c.generalDiscounts?`Trade-in / other discounts: -${money(c.generalDiscounts)}`:'',
+    `Subtotal: ${money(c.subtotal)}`, `Estimated tax: ${money(c.tax)}`, `PAY TODAY: ${money(c.total)}`,
+    `Estimated monthly after prepaid period: ${money(c.estimatedMonthly)}/mo`, c.totalSavings?`Estimated savings: ${money(c.totalSavings)}`:'',
+    i.note?`Note: ${i.note}`:'', i.salesRep?`Sales rep: ${i.salesRep}`:'', '',
+    'Estimate only. Pricing, promotions and eligibility require final verification in the approved Boost sales system.'
+  ].filter(x=>x!==''||true).join('\n').replace(/\n{3,}/g,'\n\n');
+}
+function validateQuote(input){
+  if(!input.planId&&!input.deviceId&&!input.accessoryIds.length)return 'Add a plan, device or accessory before saving.';
+  if(!input.salesRep)return 'Enter the sales representative.';
+  return '';
+}
+function saveCurrentQuote(){
+  const input=getQuoteInput(), problem=validateQuote(input); if(problem){toast(problem);return;}
+  const now=new Date().toISOString(), calc=calculateQuote(input,data), storedInput={...input,customerName:safeText(input.customerName,80),customerPhone:redactPhoneForStorage(input.customerPhone),salesRep:safeText(input.salesRep,80),note:safeText(input.note,500)}; let q;
+  if(currentQuoteId){q=quotes.find(x=>x.id===currentQuoteId);Object.assign(q,{input:storedInput,calculation:calc,updatedAt:now});}
+  else {q={id:makeId('quote'),quoteNumber:quoteNumber(data.settings.quotePrefix),input:storedInput,calculation:calc,createdAt:now,updatedAt:now,createdBy:'local-advocate'};quotes.unshift(q);currentQuoteId=q.id;}
+  quotes=quotes.slice(0,SECURITY.maxSavedQuotes);
+  saveQuotes(quotes); renderQuote(); renderHistory(); renderReports(); toast(`Saved ${q.quoteNumber} · phone redacted for privacy`);
+}
+async function copyQuote(){try{await navigator.clipboard.writeText(buildQuoteText(currentQuotePreview()));toast('Quote copied');}catch{toast('Copy is not available in this browser');}}
+async function shareQuote(){const text=buildQuoteText(currentQuotePreview());if(navigator.share){try{await navigator.share({title:'Boost Mobile Quote',text});}catch{}}else{try{await navigator.clipboard.writeText(text);toast('Sharing unavailable — quote copied');}catch{toast('Sharing is not available');}}}
+function clearQuote(){
+  currentQuoteId=null; $('transactionType').value='New Line'; if($('deviceType'))$('deviceType').value='all'; ['customerName','customerPhone','quoteNote','deviceId','planId'].forEach(id=>$(id).value='');
+  $('salesRep').value=currentUser.displayName; $('lineQty').value='1'; $('months').value='1'; $('protect').checked=false;
+  document.querySelectorAll('.acc-check').forEach(x=>x.checked=false); $('accessoryDiscount').value='0'; $('activationFee').value=data.settings.activationFee;
+  $('additionalFees').value='0'; $('tradeIn').value='0'; $('manualDiscount').value='0'; $('waiveActivation').checked=false; renderQuote();
+}
+function renderHistory(){
+  if(!$('historyList'))return; const q=($('historySearch')?.value||'').toLowerCase();
+  const list=quotes.filter(x=>[x.quoteNumber,x.input.customerName,x.input.customerPhone,x.input.salesRep,x.input.transactionType].join(' ').toLowerCase().includes(q));
+  $('historyList').innerHTML=list.length?list.map(x=>`<article class="card history-card"><div><h4>${esc(x.quoteNumber)}</h4><p>${esc(x.input.customerName||'Customer quote')} · ${new Date(x.updatedAt).toLocaleString()}</p></div><div><strong>${esc(x.input.transactionType||'Quote')}</strong><p>${esc(x.input.salesRep||'—')} · ${x.calculation.qty||1} line${(x.calculation.qty||1)>1?'s':''}</p></div><div class="quote-total">${money(x.calculation.total)}</div><div class="button-row"><button class="btn secondary" data-open="${esc(x.id)}">Open</button>${currentUser&&currentUser.role!=='advocate'?`<button class="btn danger" data-delete="${esc(x.id)}">Delete</button>`:''}</div></article>`).join(''):'<article class="card muted">No saved quotes found.</article>';
+  document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>openQuote(b.dataset.open)); document.querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>deleteQuote(b.dataset.delete));
+}
+function openQuote(id){
+  const q=quotes.find(x=>x.id===id); if(!q)return; currentQuoteId=id; const i=q.input;
+  $('transactionType').value=i.transactionType||'New Line'; $('customerName').value=i.customerName||''; $('customerPhone').value=i.customerPhone||''; $('salesRep').value=i.salesRep||''; $('quoteNote').value=i.note||'';
+  $('deviceId').value=i.deviceId||''; $('lineQty').value=i.lineQty||q.calculation.qty||1; $('planId').value=i.planId||''; $('months').value=i.months||1; $('protect').checked=!!i.protect;
+  document.querySelectorAll('.acc-check').forEach(x=>x.checked=(i.accessoryIds||[]).includes(x.value)); $('accessoryDiscount').value=i.accessoryDiscount||0; $('activationFee').value=i.activationFee??data.settings.activationFee;
+  $('additionalFees').value=i.additionalFees||0; $('tradeIn').value=i.tradeIn||0; $('manualDiscount').value=i.manualDiscount||0; $('waiveActivation').checked=!!i.waiveActivation;
+  renderQuote(); navigate('quote'); toast(`Opened ${q.quoteNumber}`);
+}
+function deleteQuote(id){if(!confirm('Delete this quote?'))return;quotes=quotes.filter(x=>x.id!==id);saveQuotes(quotes);if(currentQuoteId===id)currentQuoteId=null;renderHistory();renderReports();toast('Quote deleted');}
+function renderReports(){
+  if(!$('statsGrid'))return; const total=quotes.reduce((s,q)=>s+Number(q.calculation.total||0),0), avg=quotes.length?total/quotes.length:0, latest=quotes[0];
+  $('statsGrid').innerHTML=[['Saved quotes',quotes.length],['Total quoted value',money(total)],['Average quote',money(avg)],['Latest quote',latest?latest.quoteNumber:'—']].map(x=>`<article class="card stat-card"><small>${x[0]}</small><strong>${x[1]}</strong></article>`).join('');
+  const reps={}; quotes.forEach(q=>{const r=q.input.salesRep||'Unassigned';reps[r]??={count:0,total:0};reps[r].count++;reps[r].total+=Number(q.calculation.total||0)});
+  $('repReport').innerHTML=`<table><thead><tr><th>Representative</th><th>Quotes</th><th>Quoted Value</th><th>Average</th></tr></thead><tbody>${Object.entries(reps).sort((a,b)=>b[1].total-a[1].total).map(([r,v])=>`<tr><td>${esc(r)}</td><td>${v.count}</td><td>${money(v.total)}</td><td>${money(v.total/v.count)}</td></tr>`).join('')}</tbody></table>`;
+}
+
+const settingFields=[['storeName','Store name','text'],['storeAddress','Store address','text'],['storePhone','Store phone','text'],['taxRate','Sales tax %','number'],['activationFee','Default activation / line','number'],['protectMonthly','Boost Protect / line / month','number'],['quotePrefix','Quote prefix','text'],['quoteValidityDays','Quote validity (days)','number'],['taxDevice','Tax device','checkbox'],['taxAccessories','Tax accessories','checkbox'],['taxPlan','Tax plan','checkbox'],['taxProtect','Tax protection','checkbox'],['taxActivation','Tax activation','checkbox'],['taxAdditionalFees','Tax additional fees','checkbox']];
+function renderSettings(){if(!$('settingsEditor'))return;$('settingsEditor').innerHTML=settingFields.map(([k,label,t])=>t==='checkbox'?`<label class="check-label"><input data-setting="${k}" type="checkbox" ${data.settings[k]?'checked':''}/> ${label}</label>`:`<label>${label}<input data-setting="${k}" type="${t}" step="0.001" value="${esc(data.settings[k]??'')}" /></label>`).join('');}
+function saveSettingsFromUI(){document.querySelectorAll('[data-setting]').forEach(el=>{const k=el.dataset.setting;data.settings[k]=el.type==='checkbox'?el.checked:el.type==='number'?Number(el.value):el.value.trim();});saveData(data);$('activationFee').value=data.settings.activationFee;renderAll();toast('Quote settings saved');}
+const catalogDefs={devices:{label:'Devices',cols:[['brand','Brand'],['model','Model'],['sku','SKU'],['retail','Retail'],['publicFrom','Public From'],['channel','Channel'],['inStock','Promo Stock']]},plans:{label:'Plans',cols:[['name','Plan'],['price','Monthly price'],['description','Description']]},accessories:{label:'Accessories',cols:[['sku','SKU'],['name','Name'],['price','Price'],['cost','Cost']]},promotions:{label:'Promotions',cols:[['name','Name'],['description','Description'],['amount','Amount']]}};
+function renderCatalog(){if(!$('catalogTabs'))return;$('catalogTabs').innerHTML=Object.entries(catalogDefs).map(([k,v])=>`<button class="tab ${catalogSection===k?'active':''}" data-cat="${k}">${v.label}</button>`).join('');document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{catalogSection=b.dataset.cat;renderCatalog();});const def=catalogDefs[catalogSection],rows=catalogSection==='devices'?data.devices.filter(d=>d&&d.active&&d.inStock===true):data[catalogSection];$('catalogEditor').innerHTML=`<table><thead><tr>${def.cols.map(c=>`<th>${c[1]}</th>`).join('')}<th>Active</th><th></th></tr></thead><tbody>${rows.map(r=>`<tr>${def.cols.map(([k])=>`<td>${k==='inStock'?`<input type="checkbox" data-row="${esc(r.id)}" data-field="${k}" ${r[k]?'checked':''}>`:`<input data-row="${esc(r.id)}" data-field="${k}" value="${esc(r[k])}" />`}</td>`).join('')}<td><input type="checkbox" data-row="${esc(r.id)}" data-field="active" ${r.active?'checked':''}></td><td><button class="btn danger" data-remove="${esc(r.id)}">Remove</button></td></tr>`).join('')}</tbody></table><button id="addCatalogRow" class="btn primary top-gap">Add ${def.label.slice(0,-1)}</button>`;document.querySelectorAll('[data-row]').forEach(el=>el.onchange=()=>updateCatalogField(el));document.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>removeCatalogRow(b.dataset.remove));$('addCatalogRow').onclick=addCatalogRow;}
+function updateCatalogField(el){const row=data[catalogSection].find(r=>r.id===el.dataset.row);if(!row)return;const k=el.dataset.field;row[k]=el.type==='checkbox'?el.checked:(['retail','promo','publicFrom','price','cost','amount'].includes(k)?Number(el.value):el.value);saveData(data);renderSelectors();renderAccessories();renderStockManager();renderGuidedChoices();renderDevicePriceMatrix();renderQuote();}
+function addCatalogRow(){const id=makeId(catalogSection.slice(0,3));if(catalogSection==='devices')data.devices.push({id,brand:'Brand',model:'New Device',sku:'SKU',retail:0,promo:0,active:true,inStock:false});if(catalogSection==='plans')data.plans.push({id,name:'New Plan',price:0,description:'',active:true});if(catalogSection==='accessories')data.accessories.push({id,sku:'SKU',name:'New Accessory',price:0,cost:0,active:true});if(catalogSection==='promotions')data.promotions.push({id,name:'New Promotion',description:'',amount:0,active:true});saveData(data);renderCatalog();renderSelectors();renderAccessories();renderQuote();}
+function removeCatalogRow(id){if(!confirm('Remove this catalog item?'))return;data[catalogSection]=data[catalogSection].filter(x=>x.id!==id);saveData(data);renderCatalog();renderSelectors();renderAccessories();renderQuote();}
+function downloadJson(name,obj){const a=document.createElement('a'),url=URL.createObjectURL(new Blob([JSON.stringify(obj,null,2)],{type:'application/json'}));a.href=url;a.download=safeText(name,80).replace(/[^A-Za-z0-9._-]/g,'_');a.rel='noopener';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);}
+async function importCatalog(){const f=$('catalogFile').files[0];if(!f)return;try{const incoming=JSON.parse(await f.text());if(!incoming.settings||!Array.isArray(incoming.devices)||!Array.isArray(incoming.plans)||!Array.isArray(incoming.accessories))throw new Error();data=incoming;saveData(data);renderAll();toast('Catalog imported');}catch{alert('Invalid Boost Quote backup JSON.');}$('catalogFile').value='';}
+
+function openDb(){return new Promise((res,rej)=>{if(!('indexedDB' in window)){rej(new Error('IndexedDB unavailable'));return;} const r=indexedDB.open('BoostQuoteDocs',1);r.onupgradeneeded=()=>{if(!r.result.objectStoreNames.contains('pdfs'))r.result.createObjectStore('pdfs',{keyPath:'id'});};r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);});}
+async function uploadPdfs(){const files=[...$('pdfUpload').files];if(!files.length)return;const db=await openDb();const tx=db.transaction('pdfs','readwrite'),store=tx.objectStore('pdfs');files.forEach(f=>store.put({id:makeId('pdf'),name:f.name,type:f.type,size:f.size,addedAt:new Date().toISOString(),blob:f}));tx.oncomplete=()=>{db.close();$('pdfUpload').value='';renderPdfList();toast(`${files.length} PDF${files.length>1?'s':''} attached`);};}
+async function getPdfs(){try{const db=await openDb();return await new Promise((res,rej)=>{const r=db.transaction('pdfs','readonly').objectStore('pdfs').getAll();r.onsuccess=()=>{db.close();res(r.result)};r.onerror=()=>rej(r.error);});}catch{return[];}}
+async function renderPdfList(){if(!$('pdfList'))return;const docs=await getPdfs();$('pdfList').innerHTML=docs.length?docs.sort((a,b)=>b.addedAt.localeCompare(a.addedAt)).map(d=>`<div class="doc-item"><span><strong>${esc(d.name)}</strong><br>${(d.size/1024/1024).toFixed(2)} MB</span><span class="button-row"><button class="btn secondary" data-pdf-open="${esc(d.id)}">Open</button><button class="btn danger" data-pdf-del="${esc(d.id)}">Delete</button></span></div>`).join(''):'<p class="muted">No pricing PDFs attached yet.</p>';document.querySelectorAll('[data-pdf-open]').forEach(b=>b.onclick=()=>openPdf(b.dataset.pdfOpen));document.querySelectorAll('[data-pdf-del]').forEach(b=>b.onclick=()=>deletePdf(b.dataset.pdfDel));}
+async function getPdf(id){const db=await openDb();return await new Promise((res,rej)=>{const r=db.transaction('pdfs','readonly').objectStore('pdfs').get(id);r.onsuccess=()=>{db.close();res(r.result)};r.onerror=()=>rej(r.error);});}
+async function openPdf(id){const d=await getPdf(id);if(!d||d.type!=='application/pdf')return;const url=URL.createObjectURL(d.blob);const w=window.open(url,'_blank','noopener,noreferrer');if(w)w.opener=null;setTimeout(()=>URL.revokeObjectURL(url),60000);}
+async function deletePdf(id){const db=await openDb();const tx=db.transaction('pdfs','readwrite');tx.objectStore('pdfs').delete(id);tx.oncomplete=()=>{db.close();renderPdfList();toast('PDF removed');};}
+
+
+const PRICING_PIN_KEY='boostQuote.managerPinHash.v4_2';
+const PRICING_DOC_DB='BoostQuotePricingUpdates';
+let pricingUpdatesUnlocked=false;
+let changingManagerPin=false;
+
+function renderPricingUpdateAccess(){
+  let hasPin=false; try{hasPin=!!localStorage.getItem(PRICING_PIN_KEY);}catch(e){hasPin=false;}
+  $('pricingPinMessage').textContent='';
+  if(pricingUpdatesUnlocked){
+    $('pricingUpdateLocked').classList.add('hidden');
+    $('pricingUpdatePanel').classList.remove('hidden');
+    $('pricingCatalogStatus').textContent=`${data.catalogVersion || 'Catalog'} · ${data.devices.filter(d=>d.active).length} active devices · ${data.devices.filter(d=>d.active&&d.inStock).length} in stock`;
+    renderPricingDocHistory();
+    return;
+  }
+  $('pricingUpdateLocked').classList.remove('hidden');
+  $('pricingUpdatePanel').classList.add('hidden');
+  $('pricingPinSetup').classList.toggle('hidden',hasPin&&!changingManagerPin);
+  $('pricingPinLogin').classList.toggle('hidden',!hasPin||changingManagerPin);
+}
+async function hashManagerPin(pin){
+  const input='SUKSUN-BOOST-QUOTE|'+String(pin||'');
+  try{
+    if(window.crypto && crypto.subtle && window.TextEncoder){
+      const bytes=new TextEncoder().encode(input);
+      const digest=await crypto.subtle.digest('SHA-256',bytes);
+      return 'sha256:'+Array.from(new Uint8Array(digest)).map(b=>b.toString(16).padStart(2,'0')).join('');
+    }
+  }catch(e){}
+  let h1=0x811c9dc5,h2=0x9e3779b9;
+  for(let i=0;i<input.length;i++){
+    const c=input.charCodeAt(i);
+    h1^=c;h1=Math.imul(h1,0x01000193);
+    h2^=(c+i);h2=Math.imul(h2,0x85ebca6b);
+  }
+  return 'local:'+((h1>>>0).toString(16).padStart(8,'0'))+((h2>>>0).toString(16).padStart(8,'0'));
+}
+function validManagerPin(pin){return /^\d{4,12}$/.test(pin||'');}
+function managerStorageAvailable(){
+  try{
+    const k='__boost_pin_test__';
+    localStorage.setItem(k,'1');
+    const ok=localStorage.getItem(k)==='1';
+    localStorage.removeItem(k);
+    return ok;
+  }catch(e){return false;}
+}
+async function setManagerPin(){
+  const msg=$('pricingPinMessage');
+  try{
+    const a=$('newManagerPin').value.trim(),b=$('confirmManagerPin').value.trim();
+    msg.textContent='';
+    if(!validManagerPin(a)){ msg.textContent='PIN must contain 4–12 digits. Example: 9999 or 246810.'; return; }
+    if(a!==b){ msg.textContent='PIN entries do not match.'; return; }
+    if(!managerStorageAvailable()){ msg.textContent='Safari is blocking local storage. Turn off Private Browsing for this site and try again.'; return; }
+    const hashed=await hashManagerPin(a);
+    localStorage.setItem(PRICING_PIN_KEY,hashed);
+    if(localStorage.getItem(PRICING_PIN_KEY)!==hashed){throw new Error('PIN could not be saved');}
+    $('newManagerPin').value='';$('confirmManagerPin').value='';
+    changingManagerPin=false;pricingUpdatesUnlocked=true;
+    renderPricingUpdateAccess();toast('Manager PIN created successfully');
+  }catch(e){
+    msg.textContent='Could not create the Manager PIN on this browser. Open the GitHub Pages site in normal Safari/Chrome mode and try again.';
+    console.error('Manager PIN setup error',e);
+  }
+}
+async function unlockPricingUpdates(){
+  const msg=$('pricingPinMessage');
+  try{
+    const pin=$('managerPin').value.trim();
+    msg.textContent='';
+    if(!validManagerPin(pin)){ msg.textContent='Enter your 4–12 digit Manager PIN.'; return; }
+    if(!managerStorageAvailable()){ msg.textContent='Safari is blocking local storage. Use normal browsing mode and try again.'; return; }
+    const expected=localStorage.getItem(PRICING_PIN_KEY);
+    const actual=await hashManagerPin(pin);
+    if(!expected||actual!==expected){ msg.textContent='Incorrect Manager PIN.'; return; }
+    $('managerPin').value='';pricingUpdatesUnlocked=true;renderPricingUpdateAccess();toast('Pricing updates unlocked');
+  }catch(e){
+    msg.textContent='Could not unlock Pricing Updates on this browser.';
+    console.error('Manager PIN unlock error',e);
+  }
+}
+function lockPricingUpdates(){pricingUpdatesUnlocked=false;changingManagerPin=false;renderPricingUpdateAccess();toast('Pricing updates locked');}
+function beginManagerPinChange(){
+  if(!pricingUpdatesUnlocked)return;
+  pricingUpdatesUnlocked=false;changingManagerPin=true;
+  $('pricingPinSetup').classList.remove('hidden');$('pricingPinLogin').classList.add('hidden');
+  $('pricingUpdatePanel').classList.add('hidden');$('pricingUpdateLocked').classList.remove('hidden');
+  $('pricingPinMessage').textContent='Set a new Manager PIN.';
+}
+
+function openPricingDb(){
+  return new Promise((resolve,reject)=>{
+    if(!('indexedDB' in window)){reject(new Error('IndexedDB unavailable'));return;}
+    const req=indexedDB.open(PRICING_DOC_DB,1);
+    req.onupgradeneeded=()=>{
+      const db=req.result;
+      if(!db.objectStoreNames.contains('documents'))db.createObjectStore('documents',{keyPath:'id'});
+    };
+    req.onsuccess=()=>resolve(req.result);
+    req.onerror=()=>reject(req.error);
+  });
+}
+function readFileBytes(file){return file.arrayBuffer();}
+async function isValidPdfFile(file){
+  if(!file||file.size<5||file.size>15*1024*1024)return false;
+  const buf=await file.slice(0,5).arrayBuffer();
+  const sig=new TextDecoder().decode(buf);
+  return sig==='%PDF-';
+}
+async function savePricingPdf(){
+  if(!pricingUpdatesUnlocked)return;
+  const file=$('pricingPdfFile').files[0];
+  if(!file){alert('Choose a PDF file first.');return;}
+  if(!(await isValidPdfFile(file))){alert('Invalid PDF or file exceeds 15 MB.');return;}
+  const docType=$('pricingDocType').value;
+  const effectiveDate=$('pricingEffectiveDate').value;
+  if(!effectiveDate){alert('Enter the effective date.');return;}
+  const version=($('pricingVersionLabel').value||'').trim() || `${docType==='hotsheet'?'Hotsheet':'Promotion'} ${effectiveDate}`;
+  const record={
+    id:`pricing-${Date.now()}-${Math.random().toString(36).slice(2,8)}`,
+    docType,effectiveDate,version,
+    notes:($('pricingDocNotes').value||'').trim(),
+    fileName:file.name.slice(0,180),
+    size:file.size,
+    mime:'application/pdf',
+    uploadedAt:new Date().toISOString(),
+    active:false,
+    blob:file
+  };
+  const db=await openPricingDb();
+  await new Promise((resolve,reject)=>{
+    const tx=db.transaction('documents','readwrite');
+    tx.objectStore('documents').put(record);
+    tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);
+  });
+  db.close();
+  $('pricingPdfFile').value='';$('pricingVersionLabel').value='';$('pricingDocNotes').value='';
+  renderPricingDocHistory();toast('Pricing PDF uploaded');
+}
+async function getPricingDocs(){
+  const db=await openPricingDb();
+  const docs=await new Promise((resolve,reject)=>{
+    const r=db.transaction('documents','readonly').objectStore('documents').getAll();
+    r.onsuccess=()=>resolve(r.result||[]);r.onerror=()=>reject(r.error);
+  });
+  db.close();
+  return docs.sort((a,b)=>String(b.uploadedAt).localeCompare(String(a.uploadedAt)));
+}
+async function renderPricingDocHistory(){
+  if(!pricingUpdatesUnlocked)return;
+  const host=$('pricingDocHistory');
+  try{
+    const docs=await getPricingDocs();
+    if(!docs.length){host.innerHTML='<div class="empty-state">No pricing or promotion PDFs uploaded yet.</div>';return;}
+    host.innerHTML=docs.map(d=>`<div class="pricing-doc-card">
+      <div class="row-between"><div><span class="doc-status ${d.active?'active':''}">${d.active?'ACTIVE':'ARCHIVED'}</span> <strong>${esc(d.docType==='hotsheet'?'Device Hotsheet':'Promotion PDF')}</strong></div><small>${esc(d.effectiveDate||'')}</small></div>
+      <h4>${esc(d.version||d.fileName)}</h4>
+      <div class="file-name">${esc(d.fileName)} · ${(Number(d.size||0)/1024/1024).toFixed(2)} MB</div>
+      ${d.notes?`<p>${esc(d.notes)}</p>`:''}
+      <div class="button-row">
+        <button class="btn secondary" data-pdoc-view="${esc(d.id)}">Open PDF</button>
+        ${d.active?'':`<button class="btn primary" data-pdoc-active="${esc(d.id)}" data-pdoc-type="${esc(d.docType)}">Mark Active</button>`}
+        <button class="btn danger" data-pdoc-delete="${esc(d.id)}">Delete</button>
+      </div>
+    </div>`).join('');
+    document.querySelectorAll('[data-pdoc-view]').forEach(b=>b.onclick=()=>openPricingDocument(b.dataset.pdocView));
+    document.querySelectorAll('[data-pdoc-active]').forEach(b=>b.onclick=()=>setActivePricingDocument(b.dataset.pdocActive,b.dataset.pdocType));
+    document.querySelectorAll('[data-pdoc-delete]').forEach(b=>b.onclick=()=>deletePricingDocument(b.dataset.pdocDelete));
+  }catch(e){host.innerHTML='<div class="empty-state">Pricing document storage is unavailable in this browser.</div>';}
+}
+async function getPricingDocument(id){
+  const db=await openPricingDb();
+  const doc=await new Promise((resolve,reject)=>{
+    const r=db.transaction('documents','readonly').objectStore('documents').get(id);
+    r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);
+  });
+  db.close();return doc;
+}
+async function openPricingDocument(id){
+  const doc=await getPricingDocument(id);if(!doc||!doc.blob)return;
+  const url=URL.createObjectURL(doc.blob);
+  const w=window.open(url,'_blank','noopener,noreferrer');if(w)w.opener=null;
+  setTimeout(()=>URL.revokeObjectURL(url),120000);
+}
+async function setActivePricingDocument(id,type){
+  const db=await openPricingDb();
+  const tx=db.transaction('documents','readwrite'),store=tx.objectStore('documents');
+  const all=await new Promise((resolve,reject)=>{const r=store.getAll();r.onsuccess=()=>resolve(r.result||[]);r.onerror=()=>reject(r.error);});
+  all.forEach(d=>{if(d.docType===type){d.active=d.id===id;store.put(d);}});
+  await new Promise((resolve,reject)=>{tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);});
+  db.close();renderPricingDocHistory();toast('Active pricing document updated');
+}
+async function deletePricingDocument(id){
+  if(!confirm('Delete this stored pricing document from this browser?'))return;
+  const db=await openPricingDb();
+  await new Promise((resolve,reject)=>{
+    const tx=db.transaction('documents','readwrite');tx.objectStore('documents').delete(id);
+    tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);
+  });
+  db.close();renderPricingDocHistory();toast('Pricing document deleted');
+}
+
+function sanitizePricingUpdateObject(obj){
+  if(!obj||typeof obj!=='object')throw new Error('Invalid JSON');
+  if(!obj.settings||!Array.isArray(obj.devices)||!Array.isArray(obj.plans)||!Array.isArray(obj.accessories))throw new Error('Missing catalog sections');
+  const oldStock=new Map();
+  data.devices.forEach(d=>{
+    const keys=[d.id,d.sku,d.model].filter(Boolean).map(x=>String(x).trim().toLowerCase());
+    keys.forEach(k=>oldStock.set(k,!!d.inStock));
+  });
+  const devices=obj.devices
+    .filter(d=>d&&typeof d==='object'&&d.eol!==true&&d.EOL!==true&&String(d.status||'').toLowerCase()!=='eol')
+    .map(d=>{
+      const copy={...d};
+      const keys=[copy.id,copy.sku,copy.model].filter(Boolean).map(x=>String(x).trim().toLowerCase());
+      const found=keys.find(k=>oldStock.has(k));
+      copy.inStock=found?oldStock.get(found):false;
+      copy.active=copy.active!==false;
+      return copy;
+    });
+  return {
+    ...obj,
+    devices,
+    plans:obj.plans.map(x=>({...x,active:x.active!==false})),
+    accessories:obj.accessories.map(x=>({...x,active:x.active!==false})),
+    promotions:Array.isArray(obj.promotions)?obj.promotions:[],
+    settings:{...data.settings,...obj.settings},
+    catalogVersion:String(obj.catalogVersion||`pricing-update-${new Date().toISOString().slice(0,10)}`).slice(0,120)
+  };
+}
+async function applyPricingJsonUpdate(){
+  if(!pricingUpdatesUnlocked)return;
+  const file=$('pricingJsonFile').files[0];
+  if(!file){alert('Choose the reviewed pricing JSON file first.');return;}
+  if(file.size>5*1024*1024){alert('Pricing JSON is too large.');return;}
+  try{
+    const parsed=JSON.parse(await file.text());
+    const incoming=sanitizePricingUpdateObject(parsed);
+    const beforeDevices=data.devices.length,afterDevices=incoming.devices.length;
+    if(!confirm(`Apply pricing update "${incoming.catalogVersion}"?\n\nDevices: ${beforeDevices} → ${afterDevices}\nIn-Stock selections will be preserved where devices match.\nEOL-flagged devices will be excluded.`))return;
+    data=incoming;saveData(data);renderAll();
+    $('pricingCatalogStatus').textContent=`${data.catalogVersion} · ${data.devices.filter(d=>d.active).length} active devices · ${data.devices.filter(d=>d.active&&d.inStock).length} in stock`;
+    toast('Reviewed pricing update applied');
+  }catch(e){alert('Pricing JSON could not be applied. Confirm it is a valid Boost Quote catalog backup/update.');}
+  $('pricingJsonFile').value='';
+}
+
+boot();
+
+  </script>
+<script>
+document.addEventListener('change',function(e){
+  if(!e.target)return;
+  if(e.target.id==='transactionType' || e.target.id==='deviceId'){
+    syncIPhoneUpgradeRule();
+    syncUpgradeUI();
+    syncProtectLabel();
+    try{renderQuote();}catch(err){}
+  }
+});
+</script>
+<div class="deploy-version-badge">Boost Quote v4.6 • 2026-08-10</div>
+<script>
+(async function clearLegacyBoostQuoteCaches(){
+  try{
+    if('serviceWorker' in navigator){
+      const regs=await navigator.serviceWorker.getRegistrations();
+      for(const reg of regs){
+        try{ await reg.unregister(); }catch(e){}
+      }
+    }
+    if('caches' in window){
+      const names=await caches.keys();
+      for(const name of names){
+        if(/boost|quote|static|app/i.test(name)){
+          try{ await caches.delete(name); }catch(e){}
+        }
+      }
+    }
+  }catch(e){}
+})();
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const d=document.getElementById('pricingEffectiveDate');
+  if(d&&!d.value)d.value=new Date().toISOString().slice(0,10);
+});
+</script>
+</body>
+</html>
